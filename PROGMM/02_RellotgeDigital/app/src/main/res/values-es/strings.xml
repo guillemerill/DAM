@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RelojDigital</string>
+    <string name="hello_world">Hola mundo!</string>
+    <string name="action_sel12h">Modo 12h</string>
+    <string name="action_sel24h">Modo 24h</string>
+    <string name="action_selDay">Añadir el dia al Toast</string>
+    <string name="no_time" translatable="false">--:--:--</string>
+    <string name="no_date" translatable="false">--/--/----</string>
+    <string name="the_time_is">La hora es</string>
+    <string name="action_selNoDay">Borra el dia del Toast</string>
+
+</resources>
