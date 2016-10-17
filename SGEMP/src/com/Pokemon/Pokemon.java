@@ -6,8 +6,11 @@ package com.Pokemon;
 public class Pokemon {
     // Attributes
     private String nom;
+    // atac (0 - 50)
     private String atac;
+    // defensa (10 - 50)
     private String def;
+    // punts de salut (20 - 100)
     private String PS;
 
     // Constructors

@@ -12,11 +12,11 @@ public class Main {
     public static void main(String[] args) {
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            List<Pokemon> pkmn = new ArrayList<Pokemon>();
+            List<Pokemon> pkmn = new ArrayList<>();
 
 
             Pokemon p1 = new Pokemon("Pikachu","29","13", "36");
-            Pokemon p2 = new Pokemon("Charmander","49","27", "40");
+            PokemonFoc p2 = new PokemonFoc("Charmander","49","27", "40");
 
             p1.showAttr();
             p2.showAttr();
