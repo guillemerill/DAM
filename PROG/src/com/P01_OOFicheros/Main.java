@@ -3,44 +3,38 @@ package com.P01_OOFicheros;
 
 import static com.P01_OOFicheros.EntradaDatos.*;
 
-/**
- * Created by DAM on 11/10/16.
- */
 public class Main {
     // Variable que contiene nuestra lista de juegos
-    private static ClienteList cliente;
+    private static ClienteList clientes;
     private static Fichero miFichero;
 
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // Inicializamos nuestro fichero
-        miFichero = new Fichero("juegos.xml");
+        miFichero = new Fichero("clientes.xml");
+        clientes = new ClienteList();
         // Para inicializar la lista de misJuegos leemos de disco
-        misJuegos = (GameList) miFichero.read();
+        clientes = (ClienteList) miFichero.read();
         // Comprobamos si había fichero (o datos en el mismo)
-        if (misJuegos == null) {
+        if (miFichero == null) {
             // inicializamos la lista como una lista vacía
-            misJuegos = new GameList();
+            clientes = new ClienteList();
         }
         // Menú CRUD
         int opcion;
         do {
             mostrarMenu();
-            opcion = EntradaDatos.inputInt("Escoge una opción");
+            opcion = inputInt("Escoge una opción");
             switch (opcion) {
                 case 1:
-                    newGame();
+                    nuevoCliente();
                     break;
                 case 2:
-                    showGames();
+                    nuevoPresupuesto();
                     break;
                 case 3:
                     break;
                 case 4:
-                    deleteGame();
+                    mostrarPresupuestosCliente();
                     break;
                 case 0:
                     System.out.println("Hasta la próxima");
@@ -52,24 +46,6 @@ public class Main {
 
     }
 
-    private static void deleteGame() {
-        // Mostramos los juegos para que el usuario los pueda ver
-        showGames();
-        String nombre =
-                pedirCadenaNoVacia("Indica el nombre del juego que quieras borrar");
-        // Paso el nombre q me ha dado el usuario para buscar el juego en la lista
-        Game juego = misJuegos.obtenerGamePorNombre(nombre);
-        if (juego == null) {
-            System.out.println("No existe ningún juego con ese nombre.");
-        } else {
-            //TODO Preguntar antes confirmación de borrado
-            misJuegos.baja(juego);
-            // Grabamos en el fichero
-            miFichero.save(misJuegos);
-            System.out.println("Juego borrado.");
-        }
-    }
-
     private static void showGames() {
         System.out.println("Listado de videojuegos en el sistema");
         for (Game g : misJuegos.getLista()) {
@@ -77,7 +53,7 @@ public class Main {
         }
     }
 
-    public void nuevoCliente() {
+    private static void nuevoCliente() {
         Integer codigoCliente = inputInt("Código de cliente: ");
         String nombre = inputString("Nombre: ");
         String apellidos = inputString("Apellidos: ");
@@ -96,12 +72,12 @@ public class Main {
             }
         } while (!respuesta.equalsIgnoreCase("SI") && !respuesta.equalsIgnoreCase("no"));
         Cliente c = new Cliente(codigoCliente, nombre, apellidos, telefono, descuento);
-        cliente.altaCliente(c);
+        clientes.altaCliente(c);
         //miFichero.save(misJuegos);
         System.out.println("Cliente dado de alta.");
     }
 
-    public void nuevoPresupuesto() {
+    private static void nuevoPresupuesto() {
         Integer codigoCliente = inputInt("Código de cliente: ");
         Integer nPresupuesto = inputInt("Número de presupuesto: ");
         String concepto = inputString("Concepto: ");
@@ -115,14 +91,37 @@ public class Main {
          */
 
         Presupuesto p = new Presupuesto(codigoCliente, nPresupuesto, concepto,precioTotal,precioFinalDesc, precioFinalIVA, estado);
-        cliente.altaPresupuesto(p);
+        clientes.altaPresupuesto(p);
         //miFichero.save(misJuegos);
         System.out.println("Cliente dado de alta.");
     }
 
+    // 4.- Listado de presupuestos de un cliente determinado. Solicitará el teléfono del cliente y mostrará todos los datos de los presupuestos que se hayan emitido para dicho cliente.
+    private static void mostrarPresupuestosCliente() {
+        String telf = inputString("Introduce el número de teléfono:");
+        for(Cliente c : clientes.getLista()) {
+            if(c.getTelefono().equals(telf)) {
+                for (Presupuesto p : c.getPresupuestos()) {
+                    clientes.mostrarClientePresupuesto(c, p);
+                }
+            }
+        }
+    }
+
+    public static void modificarPresupuesto() {
+        Integer nPresupuesto = inputInt("Número de presupuesto: ");
+        String estado = inputString("Estado: ");
+        clientes.obtenerPresupuesto(nPresupuesto, estado);
+    }
 
     public void mostrarPendientes() {
-        cliente.obtenerPendientes();
+        for(Cliente c : clientes.getLista()) {
+            for (Presupuesto p : c.getPresupuestos()) {
+                if (p.getEstado().equals("Pendiente")) {
+                    clientes.mostrarClientePresupuesto(c, p);
+                }
+            }
+        }
     }
 
     private static void mostrarMenu() {
@@ -136,4 +135,6 @@ public class Main {
         System.out.println("7. Cambiar estado de un presupuesto");
         System.out.println("8. Salir");
     }
+
+    // 8.- Salir: El programa deberá finalizar. Los datos quedarán guardados.
 }

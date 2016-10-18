@@ -93,14 +93,14 @@ public class ClienteList extends Main {
     public void obtenerRechazados() {
         for(Cliente c : listaCliente) {
             for (Presupuesto p : c.getPresupuestos()) {
-                if (p.getEstado().equals("Pendiente")) {
+                if (p.getEstado().equals("Rechazado")) {
                     mostrarClientePresupuesto(c, p);
                 }
             }
         }
     }
 
-    private void mostrarClientePresupuesto(Cliente c, Presupuesto p) {
+    public void mostrarClientePresupuesto(Cliente c, Presupuesto p) {
         System.out.println("-----------------------------");
         System.out.println("Nombre: " + c.getNombre());
         System.out.println("Apellidos: " + c.getApellidos());
@@ -121,45 +121,29 @@ public class ClienteList extends Main {
             System.out.println("Telefono: " + c.getTelefono());
             System.out.println("Presupuestos: " + c.getPresupuestos().size());
         }
-
     }
 
-    public Cliente obtenerGamePorNombre(String nombre) {
-        // REcorremos la lista
-        for (Cliente g : listaCliente) {
-            // Si el nombre del juego actual es igual al nombre q me pasan
-            if (g.getNombre().equalsIgnoreCase(nombre)) {
-                // devolvemos el juego encontrado
-                return g;
+    /*
+    7.- Cambiar estado de un presupuesto. El programa deberá pedir el nº de presupuesto y permitir cambiar el estado (aceptado / rechazado / pendiente).
+     Si el presupuesto no existe deberá indicarlo y volver al menú principal sin modificar ningún dato.
+     */
+    public void obtenerPresupuesto(int codigo, String estado) {
+        boolean encontrado = false;
+        for(Cliente c : listaCliente) {
+            for (Presupuesto p : c.getPresupuestos()) {
+                if (p.getNpresupuesto() == codigo) {
+                    encontrado = true;
+                    p.setEstado(estado);
+                }
             }
         }
-        // Si llega a este punto es que no ha encontrado
-        // ningún juego con el nombre pasado
-        return null;
+        if (encontrado)
+            System.out.println("Se ha modificado correctamente.");
+        else
+            System.out.println("No se ha encontrado el presupuesto deseado");
     }
 
     public ArrayList<Cliente> getLista() {
         return listaCliente;
     }
-
-    public void setLista(ArrayList<Cliente> lista) {
-        this.listaCliente = lista;
-    }
-
-
-
-
-
-    /*
-
- (1 punto).
-
- (1 punto).
-(1,5 puntos).
-7.- Cambiar estado de un presupuesto. El programa deberá pedir el nº de
-presupuesto y permitir cambiar el estado (aceptado / rechazado / pendiente). Si
-el presupuesto no existe deberá indicarlo y volv er al menú principal sin modificar
-ningún dato. (1 punto)
-8.- Salir: El programa deberá finalizar. Los datos quedarán guardados.
-     */
 }
