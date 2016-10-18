@@ -64,12 +64,14 @@ class ViewController: UIViewController {
         timer.invalidate()
     }
     @IBAction func startBtn(sender: AnyObject) {
-        timer.invalidate()
-        timer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: Selector("time") , userInfo: nil, repeats: true)
+        if !timer.valid {
+            timer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: Selector("time") , userInfo: nil, repeats: true)
+        }
     }
     @IBAction func stopBtn(sender: AnyObject) {
         timer.invalidate()
-        inTime = 0;
+        inTime = 0
+        timeLabel.text = "00:00"
     }
     
 }
