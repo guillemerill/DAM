@@ -53,9 +53,14 @@ public class Pokemon {
     }
 
     //Methods
-    public void showAttr() {
-        String ret = "Nom: " + nom + "; Attack: " + atac + "; Def: " + def + "; PS: " + PS;
 
-        System.out.println(ret);
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "nom='" + nom + '\'' +
+                ", atac='" + atac + '\'' +
+                ", def='" + def + '\'' +
+                ", PS='" + PS + '\'' +
+                '}';
     }
 }

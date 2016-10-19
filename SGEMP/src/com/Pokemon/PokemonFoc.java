@@ -29,9 +29,10 @@ public class PokemonFoc extends Pokemon implements Capturable {
     @Override
     public String toString() {
         return "PokemonFoc{" +
-                "tipus='" + tipus + '\'' +
-                ", efectiuContra='" + efectiuContra + '\'' +
-                ", debilContra='" + debilContra + '\'' +
+                "nom='" + this.getName() + '\'' +
+                ", atac='" + this.getAtk() + '\'' +
+                ", def='" + this.getDef() + '\'' +
+                ", PS='" + this.getPS() + '\'' +
                 '}';
     }
 

@@ -17,9 +17,10 @@ public class PokemonPlanta extends Pokemon implements Capturable {
     @Override
     public String toString() {
         return "PokemonPlanta{" +
-                "tipus='" + tipus + '\'' +
-                ", efectiuContra='" + efectiuContra + '\'' +
-                ", debilContra='" + debilContra + '\'' +
+                "nom='" + this.getName() + '\'' +
+                ", atac='" + this.getAtk() + '\'' +
+                ", def='" + this.getDef() + '\'' +
+                ", PS='" + this.getPS() + '\'' +
                 '}';
     }
 
