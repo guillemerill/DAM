@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_60" class="java.beans.XMLDecoder">
+ <object class="com.P01_OOFicheros.ClienteList">
+  <void property="listaCliente">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.P01_OOFicheros.Cliente">
+      <void property="apellidos">
+       <string>1</string>
+      </void>
+      <void property="descuento">
+       <boolean>true</boolean>
+      </void>
+      <void property="nombre">
+       <string>1</string>
+      </void>
+      <void property="presupuestos">
+       <object class="com.P01_OOFicheros.PresupuestoList">
+        <void property="presupuestolist">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="com.P01_OOFicheros.Presupuesto">
+            <void property="concepto">
+             <string>1</string>
+            </void>
+            <void property="estado">
+             <string>rechazado</string>
+            </void>
+            <void property="nPresupuesto">
+             <int>1</int>
+            </void>
+            <void property="precioTotal">
+             <double>11.0</double>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="telefono">
+       <string>1</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.P01_OOFicheros.Cliente">
+      <void property="apellidos">
+       <string>2</string>
+      </void>
+      <void property="nombre">
+       <string>2</string>
+      </void>
+      <void property="presupuestos">
+       <object class="com.P01_OOFicheros.PresupuestoList">
+        <void property="presupuestolist">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="com.P01_OOFicheros.Presupuesto">
+            <void property="concepto">
+             <string>2</string>
+            </void>
+            <void property="estado">
+             <string>rechazado</string>
+            </void>
+            <void property="nPresupuesto">
+             <int>2</int>
+            </void>
+            <void property="precioTotal">
+             <double>2.0</double>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="com.P01_OOFicheros.Presupuesto">
+            <void property="concepto">
+             <string>2</string>
+            </void>
+            <void property="estado">
+             <string>pendiente</string>
+            </void>
+            <void property="nPresupuesto">
+             <int>2</int>
+            </void>
+            <void property="precioTotal">
+             <double>2.0</double>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="telefono">
+       <string>2</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

@@ -1,137 +1,68 @@
 package com.P01_OOFicheros;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by DAM on 14/10/16.
- */
-public class ClienteList extends Main {
+public class ClienteList implements Serializable {
+    // Attributes
     private ArrayList<Cliente> listaCliente;
 
-    public ClienteList() {
-        listaCliente = new ArrayList<>();
+    // Constructors
+    public ClienteList() {}
+
+    public ClienteList(ArrayList<Cliente> listaCliente) {
+        this.listaCliente = listaCliente;
     }
 
-    // 1.- Alta cliente: debe solicitar los datos del cliente asegurándose de la validez de los datos. No puede haber dos clientes con el mismo número de teléfono.
+    // Getters & Setters
+    public ArrayList<Cliente> getListaCliente() {
+        return listaCliente;
+    }
+    public void setListaCliente(ArrayList<Cliente> listaCliente) {
+        this.listaCliente = listaCliente;
+    }
+
+    // Methods
     public void altaCliente(Cliente c) {
         boolean registrado = false;
-        for(Cliente telf : listaCliente) {
-            if(telf.getTelefono().equals(c.getTelefono())) {
-                registrado = true;
+        if (listaCliente != null) {
+            for (Cliente telf : listaCliente) {
+                if (telf.getTelefono().equals(c.getTelefono())) {
+                    registrado = true;
+                }
             }
+        } else {
+            registrado = false;
+            listaCliente = new ArrayList<>();
         }
 
         if (registrado)     System.out.println("El teléfono ya está registrado");
         else    listaCliente.add(c);
     }
 
-     /*
-    2. – Nuevo presupuesto. Debe solicitar el teléfono del cliente para el que será el presupuesto.
-    Si el cliente no existe, deberá primero pedir los datos para dar de alta el cliente y luego los datos para el presupuesto.
-    Si el cliente existe , pedirá los datos del presupuesto y registrará a qué cliente pertenece.
-    La relación deberás hacerla como consideres más óptima en función de las funcionalidades que solicita la aplicación.
-    Se deben pedir los datos del presupuesto necesarios (los campos que se pueden calcular no es necesario pedirlos al usuario). Se
-    deberá asegurar la validez de los datos.
-     */
-    public void comprobarClienteTelf(String telf) {
-        boolean registrado = false;
-        for(Cliente carnet : listaCliente) {
-            if(carnet.getTelefono().equals(telf)) {
-                registrado = true;
-            }
-        }
-
-        if (registrado) {
-            nuevoPresupuesto();
-        } else {
-            nuevoCliente();
-            nuevoPresupuesto();
-        }
-    }
-
-    public void altaPresupuesto(Presupuesto p) {
-        List<Presupuesto> presupuestosCliente = new ArrayList<>();
-
+    public void altaPresupuesto(Presupuesto p, String telf) {
         for(Cliente c : listaCliente) {
-            if (c.getCodigoCliente() == p.getCodigoCliente()) {
-                presupuestosCliente = c.getPresupuestos();
-                presupuestosCliente.add(p);
-                c.setPresupuestos(presupuestosCliente);
+            if (c.getTelefono().equals(telf)) {
+                c.getPresupuestos().alta(p);
             }
         }
     }
 
-    /*
-    3.- Presupuestos pendientes. Deberá mostrar los datos de todos los presupuestos que aún no han sido aceptados ni rechazados,
-    junto con el nombre y apellidos del cliente al que pertenecen
-     */
-    public void obtenerPendientes() {
-        for(Cliente c : listaCliente) {
-            for (Presupuesto p : c.getPresupuestos()) {
-                if (p.getEstado().equals("Pendiente")) {
-                    mostrarClientePresupuesto(c, p);
-                }
-            }
-        }
+    public String listadoCliente(Cliente c) {
+        return "Cliente{" +
+                ", nombre='" + c.getNombre() + '\'' +
+                ", apellidos='" + c.getApellidos() + '\'' +
+                ", telefono='" + c.getTelefono() + '\'' +
+                ", presupuestos=" + c.getPresupuestos().getPresupuestolist().size() +
+                '}';
     }
 
-    // 4.- Listado de presupuestos de un cliente determinado. Solicitará el teléfono del cliente y mostrará todos los datos de los presupuestos que se hayan emitido para dicho cliente.
-    public void mostrarPresupuestosCliente(String telf) {
-        for(Cliente c : listaCliente) {
-            if(c.getTelefono().equals(telf)) {
-                for (Presupuesto p : c.getPresupuestos()) {
-                    mostrarClientePresupuesto(c, p);
-                }
-            }
-        }
-    }
-
-
-    // 5.- Listado de presupuestos rechazados. Deberá mostrar los datos de todos los presupuestos han sido rechazados, junto con el nombre y apellidos del cliente al que pertenecen
-
-    public void obtenerRechazados() {
-        for(Cliente c : listaCliente) {
-            for (Presupuesto p : c.getPresupuestos()) {
-                if (p.getEstado().equals("Rechazado")) {
-                    mostrarClientePresupuesto(c, p);
-                }
-            }
-        }
-    }
-
-    public void mostrarClientePresupuesto(Cliente c, Presupuesto p) {
-        System.out.println("-----------------------------");
-        System.out.println("Nombre: " + c.getNombre());
-        System.out.println("Apellidos: " + c.getApellidos());
-        System.out.println("Número presupuesto: " + p.getNpresupuesto());
-        System.out.println("Concepto: " + p.getConcepto());
-        System.out.println("Precio total: " + p.getPrecioTotal());
-        System.out.println("Precio total con descuento: " + p.getPrecioFinalDesc());
-        System.out.println("Precio total con IVA: " + p.getPrecioFinalIVA());
-        System.out.println("Estado: " + p.getEstado());
-    }
-
-    // 6.- Listado de clientes. Debe mostrar todos los datos del cliente así como el nº total de presupuestos que se han emitido para dicho cliente.
-    public  void listadoCliente() {
-        for (Cliente c : listaCliente) {
-            System.out.println("-----------------------------");
-            System.out.println("Nombre: " + c.getNombre());
-            System.out.println("Apellidos: " + c.getApellidos());
-            System.out.println("Telefono: " + c.getTelefono());
-            System.out.println("Presupuestos: " + c.getPresupuestos().size());
-        }
-    }
-
-    /*
-    7.- Cambiar estado de un presupuesto. El programa deberá pedir el nº de presupuesto y permitir cambiar el estado (aceptado / rechazado / pendiente).
-     Si el presupuesto no existe deberá indicarlo y volver al menú principal sin modificar ningún dato.
-     */
     public void obtenerPresupuesto(int codigo, String estado) {
         boolean encontrado = false;
         for(Cliente c : listaCliente) {
-            for (Presupuesto p : c.getPresupuestos()) {
-                if (p.getNpresupuesto() == codigo) {
+            for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                if (p.getnPresupuesto() == codigo) {
                     encontrado = true;
                     p.setEstado(estado);
                 }
@@ -146,4 +77,19 @@ public class ClienteList extends Main {
     public ArrayList<Cliente> getLista() {
         return listaCliente;
     }
+
+    public String mostrarClientePresupuesto(Cliente c, Presupuesto p) {
+        return "Cliente{" +
+            "Nombre: " + c.getNombre() +
+            "Apellidos: " + c.getApellidos() +
+            "Número presupuesto: " + p.getnPresupuesto() +
+            "Concepto: " + p.getConcepto() +
+            "Precio total: " + p.getPrecioTotal() +
+            "Precio total con descuento: " + p.getPrecioFinalDesc() +
+            "Precio total con IVA: " + p.getPrecioFinalIVA() +
+            "Estado: " + p.getEstado() +
+                "}";
+    }
+
+
 }

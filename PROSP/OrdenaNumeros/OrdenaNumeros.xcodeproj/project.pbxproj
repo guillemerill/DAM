@@ -14,6 +14,7 @@
 		33618EA41DA4203900A22035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33618EA21DA4203900A22035 /* LaunchScreen.storyboard */; };
 		33618EAF1DA4203900A22035 /* OrdenaNumerosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33618EAE1DA4203900A22035 /* OrdenaNumerosTests.swift */; };
 		33618EBA1DA4203900A22035 /* OrdenaNumerosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33618EB91DA4203900A22035 /* OrdenaNumerosUITests.swift */; };
+		33D0E7ED1DAFCEFC005F7F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33618E9B1DA4203900A22035 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D0E7ED1DAFCEFC005F7F36 /* ViewController.swift in Sources */,
 				33618EAF1DA4203900A22035 /* OrdenaNumerosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +483,7 @@
 				33618EC01DA4203900A22035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33618EC11DA4203900A22035 /* Build configuration list for PBXNativeTarget "OrdenaNumerosTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +492,7 @@
 				33618EC31DA4203900A22035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33618EC41DA4203900A22035 /* Build configuration list for PBXNativeTarget "OrdenaNumerosUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +501,7 @@
 				33618EC61DA4203900A22035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

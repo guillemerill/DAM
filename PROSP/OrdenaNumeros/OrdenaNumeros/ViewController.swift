@@ -10,32 +10,50 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    // UIVariables
     @IBOutlet weak var b1: UIButton!
     @IBOutlet weak var b2: UIButton!
     @IBOutlet weak var b3: UIButton!
     @IBOutlet weak var b4: UIButton!
     @IBOutlet weak var b5: UIButton!
     @IBOutlet weak var b6: UIButton!
-    var clicked: [Int] = []
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var retryBut: UIButton!
+    @IBOutlet weak var noTime: UILabel!
+    @IBOutlet weak var pFinal: UILabel!
+    @IBOutlet weak var puntos: UILabel!
+   
+    // Variables
+    var inTime: Int = 30
+    var timer: NSTimer!
+    var num: [Int] = []
+    var points: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        createButtons()
-        
-        
-        
+        start()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func start() {
+        num = []
+        noTime.hidden = true
+        inTime = 30
+        pFinal.hidden = true
+        puntos.hidden = false
+        retryBut.hidden = true
+        createButtons()
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: Selector("time") , userInfo: nil, repeats: true)
+
     }
     
     func createButtons() {
         // Creamos números aleatorios
-        var num: [Int] = []
         for _ in 0...5 {
             let n = Int(arc4random_uniform(200)) - 100
             num.append(n)
@@ -47,36 +65,72 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func clickButton(sender: UIButton) {
-        var checked: Bool = false
-        
-        let activeButton = Int(sender.titleLabel!.text!)
-        var butValues: [Int!] = [Int(b1.titleLabel!.text!), Int(b2.titleLabel!.text!), Int(b3.titleLabel!.text!), Int(b4.titleLabel!.text!), Int(b5.titleLabel!.text!), Int(b6.titleLabel!.text!)]
-        
-        var cont = 0
-        for m in butValues {
-            for n in clicked {
-                if m == n  {
-                    butValues.removeAtIndex(cont)
-                    cont--
-                }
-            }
-            cont++
+    func time() {
+        if inTime <= 0 {
+            timer.invalidate()
+            b1.hidden = true
+            b2.hidden = true
+            b3.hidden = true
+            b4.hidden = true
+            b5.hidden = true
+            b6.hidden = true
+            puntos.hidden = true
+            noTime.text = "Se te ha acabado el tiempo :("
+            noTime.hidden = false
+            pFinal.text = "Puntuacion final: " + String(points)
+            pFinal.hidden = false
+            retryBut.hidden = false
         }
-        
-        var min : Int = 100
-        for i in butValues {
-            if i < min {
-                min = i
-            }
+        var time: String? = String(inTime)
+        if inTime >= 10 {
+            time = "00:" + time!
+        } else {
+            time = "00:0" + time!
         }
-        if min == activeButton {
-            clicked.append(min)
-            sender.hidden = true
-        }
-        
+        timerLabel.text = time
+        inTime -= 1
         
     }
+    
+    @IBAction func clickButton(sender: UIButton) {
+        num.sortInPlace()
+        
+        let activeButton = Int((sender.titleLabel!.text!))
+     
+        if num[0] == activeButton {
+            num.removeAtIndex(0)
+            sender.hidden = true
+            points += 10
+        } else {
+            if points > 0 {
+                points -= 5
+            }
+        }
+        puntos.text = "Puntos: " + String(points)
+        if num.isEmpty {
+            haGanado()
+        }
+    }
+    
+    func haGanado() {
+        timer.invalidate()
+        noTime.text = "Has ganado!"
+        noTime.hidden = false
+        retryBut.hidden = false
+        puntos.text = "Puntos: " + String(points)
+    }
+    
+    @IBAction func retry(sender: UIButton) {
+        retryBut.hidden = true
+        b1.hidden = false
+        b2.hidden = false
+        b3.hidden = false
+        b4.hidden = false
+        b5.hidden = false
+        b6.hidden = false
+        start()
+    }
+    
+    
 }
 

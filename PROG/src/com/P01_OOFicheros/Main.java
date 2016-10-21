@@ -9,14 +9,9 @@ public class Main {
     private static Fichero miFichero;
 
     public static void main(String[] args) {
-        // Inicializamos nuestro fichero
         miFichero = new Fichero("clientes.xml");
-        clientes = new ClienteList();
-        // Para inicializar la lista de misJuegos leemos de disco
         clientes = (ClienteList) miFichero.read();
-        // Comprobamos si había fichero (o datos en el mismo)
-        if (miFichero == null) {
-            // inicializamos la lista como una lista vacía
+        if (clientes == null) {
             clientes = new ClienteList();
         }
         // Menú CRUD
@@ -32,29 +27,32 @@ public class Main {
                     nuevoPresupuesto();
                     break;
                 case 3:
+                    mostrarPendientes();
                     break;
                 case 4:
                     mostrarPresupuestosCliente();
                     break;
-                case 0:
+                case 5:
+                    mostrarRechazados();
+                    break;
+                case 6:
+                    allClientes();
+                    break;
+                case 7:
+                    modificarPresupuesto();
+                    break;
+                case 8:
                     System.out.println("Hasta la próxima");
                     break;
                 default:
                     System.out.println("Opción incorrecta.");
             }
-        } while (opcion != 0);
+        } while (opcion != 8);
 
     }
 
-    private static void showGames() {
-        System.out.println("Listado de videojuegos en el sistema");
-        for (Game g : misJuegos.getLista()) {
-            System.out.println(g);
-        }
-    }
-
+    // 1
     private static void nuevoCliente() {
-        Integer codigoCliente = inputInt("Código de cliente: ");
         String nombre = inputString("Nombre: ");
         String apellidos = inputString("Apellidos: ");
         String telefono = inputString("Telefono: ");
@@ -62,7 +60,7 @@ public class Main {
         String respuesta;
         boolean descuento = false;
         do {
-            respuesta = inputString("¿Lo tienes (SI/NO)?");
+            respuesta = inputString("¿Tiene descuento? (SI/NO)?");
             if (respuesta.equalsIgnoreCase("si")) {
                 descuento = true;
             } else if (respuesta.equalsIgnoreCase("no")) {
@@ -71,57 +69,91 @@ public class Main {
                 System.out.println("Respuesta incorrecta. Escribe SI o NO");
             }
         } while (!respuesta.equalsIgnoreCase("SI") && !respuesta.equalsIgnoreCase("no"));
-        Cliente c = new Cliente(codigoCliente, nombre, apellidos, telefono, descuento);
+        Cliente c = new Cliente(nombre, apellidos, telefono, descuento, new PresupuestoList());
+
         clientes.altaCliente(c);
-        //miFichero.save(misJuegos);
+
+        miFichero.save(clientes);
         System.out.println("Cliente dado de alta.");
     }
-
+    // 2
     private static void nuevoPresupuesto() {
-        Integer codigoCliente = inputInt("Código de cliente: ");
+        String telf = inputString("Introduce el teléfono: ");
+
+        boolean registrado = false;
+        for(Cliente carnet : clientes.getLista()) {
+            if(carnet.getTelefono().equals(telf)) {
+                registrado = true;
+            }
+        }
+
+        if (!registrado)
+            nuevoCliente();
+
         Integer nPresupuesto = inputInt("Número de presupuesto: ");
         String concepto = inputString("Concepto: ");
         Double precioTotal = inputDouble("Precio total: ");
-        String estado = inputString("Estado: ");
-        Double precioFinalDesc = 00.0;
-        Double precioFinalIVA = 00.0;
+        String estado;
+        do {
+            estado = inputString("¿Estado? (Aceptado/Rechazado/Pendiente)?");
+        } while (!estado.equalsIgnoreCase("aceptado") && !estado.equalsIgnoreCase("rechazado") && !estado.equalsIgnoreCase("pendiente"));
+        Double precioFinalDesc = precioTotal;
+         for(Cliente c : clientes.getListaCliente()) {
+            if (c.getTelefono().equals(telf)) {
+                if (c.isDescuento())
+                    precioFinalDesc = precioTotal + (precioTotal * 0.05);
+            }
+        }
+        Double precioFinalIVA = precioFinalDesc + (precioFinalDesc * 0.21);
 
-        /*
-        TODO: precioDescuento, precioIVA
-         */
-
-        Presupuesto p = new Presupuesto(codigoCliente, nPresupuesto, concepto,precioTotal,precioFinalDesc, precioFinalIVA, estado);
-        clientes.altaPresupuesto(p);
-        //miFichero.save(misJuegos);
-        System.out.println("Cliente dado de alta.");
+        Presupuesto p = new Presupuesto( nPresupuesto, concepto, precioTotal, precioFinalDesc, precioFinalIVA, estado);
+        clientes.altaPresupuesto(p, telf);
+        miFichero.save(clientes);
+        System.out.println("Presupuesto dado de alta.");
     }
-
+    // 3
+    private static void mostrarPendientes() {
+        for(Cliente c : clientes.getLista()) {
+            for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                if (p.getEstado().equalsIgnoreCase("Pendiente")) {
+                    System.out.println(clientes.mostrarClientePresupuesto(c, p));
+                }
+            }
+        }
+    }
     // 4.- Listado de presupuestos de un cliente determinado. Solicitará el teléfono del cliente y mostrará todos los datos de los presupuestos que se hayan emitido para dicho cliente.
     private static void mostrarPresupuestosCliente() {
         String telf = inputString("Introduce el número de teléfono:");
         for(Cliente c : clientes.getLista()) {
             if(c.getTelefono().equals(telf)) {
-                for (Presupuesto p : c.getPresupuestos()) {
-                    clientes.mostrarClientePresupuesto(c, p);
+                for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                    System.out.println(clientes.mostrarClientePresupuesto(c, p));
                 }
             }
         }
     }
-
-    public static void modificarPresupuesto() {
+    // 5
+    private static void mostrarRechazados() {
+        for(Cliente c : clientes.getLista()) {
+            for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                if (p.getEstado().equalsIgnoreCase("Rechazado")) {
+                    System.out.println(clientes.mostrarClientePresupuesto(c, p));
+                }
+            }
+        }
+    }
+    // 6
+    private static void allClientes() {
+        for(Cliente c : clientes.getLista()) {
+            System.out.println(clientes.listadoCliente(c));
+        }
+    }
+    // 7
+    private static void modificarPresupuesto() {
         Integer nPresupuesto = inputInt("Número de presupuesto: ");
         String estado = inputString("Estado: ");
         clientes.obtenerPresupuesto(nPresupuesto, estado);
-    }
-
-    public void mostrarPendientes() {
-        for(Cliente c : clientes.getLista()) {
-            for (Presupuesto p : c.getPresupuestos()) {
-                if (p.getEstado().equals("Pendiente")) {
-                    clientes.mostrarClientePresupuesto(c, p);
-                }
-            }
-        }
+        miFichero.save(clientes);
     }
 
     private static void mostrarMenu() {

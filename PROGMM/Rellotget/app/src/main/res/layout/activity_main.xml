@@ -10,11 +10,12 @@
     tools:context="com.guillem.rellotget.MainActivity">
 
     <com.guillem.rellotget.Rellotge
+        android:id="@+id/rellotge"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rellotge"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/foto"/>
 
 </RelativeLayout>

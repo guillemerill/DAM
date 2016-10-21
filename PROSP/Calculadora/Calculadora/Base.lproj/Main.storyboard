@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculadora" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aec-S7-iTg">
+                                <rect key="frame" x="29" y="59" width="317" height="449"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j8-Ks-Jhz">
+                                        <rect key="frame" x="9" y="11" width="299" height="133"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.9142883432522505" green="0.90319436370882222" blue="0.91854139397905765" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-rv-sdX">
+                                        <rect key="frame" x="9" y="144" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361733438373" green="0.28814031368556997" blue="0.40622954842931935" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleShadowColor" red="1" green="0.99557058928011144" blue="0.97273944639974674" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="J4i-tK-tgp">
+                                        <rect key="frame" x="83" y="144" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-Dx-9ey">
+                                        <rect key="frame" x="151" y="144" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="E9d-9F-fFD">
+                                        <rect key="frame" x="225" y="144" width="83" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.22394145136113786" green="0.38102377823121936" blue="0.53681282719581147" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="*">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fAf-bx-jEA">
+                                        <rect key="frame" x="9" y="217" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="cLQ-4S-9x7">
+                                        <rect key="frame" x="83" y="217" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Law-1g-bd3">
+                                        <rect key="frame" x="151" y="217" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="5sP-XB-yZA">
+                                        <rect key="frame" x="225" y="217" width="83" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.22394145136113786" green="0.38102377823121936" blue="0.53681282719581147" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="/">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="eyp-dr-HPv">
+                                        <rect key="frame" x="9" y="291" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="NYu-nJ-Sie">
+                                        <rect key="frame" x="83" y="291" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="irt-wd-NBn">
+                                        <rect key="frame" x="151" y="291" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="osC-wG-MAb">
+                                        <rect key="frame" x="225" y="291" width="83" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.22394145136113786" green="0.38102377823121936" blue="0.53681282719581147" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="3oW-HS-nrM">
+                                        <rect key="frame" x="9" y="364" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.322065142013573" green="0.5479757164237139" blue="0.7720263415937173" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="CLEAR">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZCB-4w-9Fv">
+                                        <rect key="frame" x="83" y="364" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.17324361730000001" green="0.28814031369999998" blue="0.40622954839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="6Q9-yX-xwP">
+                                        <rect key="frame" x="151" y="364" width="75" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.22394145136113786" green="0.38102377823121936" blue="0.53681282719581147" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ozH-ao-m4N">
+                                        <rect key="frame" x="225" y="364" width="83" height="75"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.22394145136113786" green="0.38102377823121936" blue="0.53681282719581147" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.96542359730000005" green="1" blue="0.99666523559999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleShadowColor" red="1" green="0.99557058929999998" blue="0.97273944639999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aec-S7-iTg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m15-yj-Y6A"/>
+                            <constraint firstItem="Aec-S7-iTg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uKw-fV-oOY"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447.5" y="437.5"/>
+        </scene>
+    </scenes>
+</document>

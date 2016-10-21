@@ -1,41 +1,32 @@
 package com.P01_OOFicheros;
 
-import java.util.List;
+import java.io.Serializable;
 
-/**
- * Created by DAM on 11/10/16.
- */
-public class Cliente {
+public class Cliente implements Serializable {
     /*
     VIP: 5%
     */
 
     // Attributes
-    private int codigoCliente;
     private String nombre;
     private String apellidos;
     private String telefono;
     private boolean descuento;
-    private List<Presupuesto> presupuestos;
+    private PresupuestoList presupuestos;
 
     // Constructor
 
-    public Cliente(int codigoCliente, String nombre, String apellidos, String telefono, boolean descuento) {
-        this.codigoCliente = codigoCliente;
+    public Cliente() {}
+
+    public Cliente(String nombre, String apellidos, String telefono, boolean descuento, PresupuestoList presupuestos) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.descuento = descuento;
+        this.presupuestos = presupuestos;
     }
 
     // Getters and setters
-    public int getCodigoCliente() {
-        return codigoCliente;
-    }
-    public void setCodigoCliente(int codigoCliente) {
-        this.codigoCliente = codigoCliente;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -64,10 +55,21 @@ public class Cliente {
         this.descuento = descuento;
     }
 
-    public List<Presupuesto> getPresupuestos() {
+    public PresupuestoList getPresupuestos() {
         return presupuestos;
     }
-    public void setPresupuestos(List<Presupuesto> presupuestos) {
+    public void setPresupuestos(PresupuestoList presupuestos) {
         this.presupuestos = presupuestos;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", descuento=" + descuento +
+                ", presupuestos=" + presupuestos +
+                '}';
     }
 }

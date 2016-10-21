@@ -1,11 +1,10 @@
 package com.P01_OOFicheros;
 
-/**
- * Created by DAM on 11/10/16.
- */
-public class Presupuesto {
+import java.io.Serializable;
+
+
+public class Presupuesto implements Serializable {
     // Attributes
-    private int codigoCliente;
     private int nPresupuesto;
     private String concepto;
     private double precioTotal;
@@ -13,9 +12,12 @@ public class Presupuesto {
     private double precioFinalIVA; // 21%
     private String estado; // Aceptado, rechazado, pendiente
 
-    // Constructor
-    public Presupuesto(int codigoCliente, int nPresupuesto, String concepto, double precioTotal, double precioFinalDesc, double precioFinalIVA, String estado) {
-        this.codigoCliente = codigoCliente;
+    // Constructors
+
+    public Presupuesto() {
+    }
+
+    public Presupuesto(int nPresupuesto, String concepto, double precioTotal, double precioFinalDesc, double precioFinalIVA, String estado) {
         this.nPresupuesto = nPresupuesto;
         this.concepto = concepto;
         this.precioTotal = precioTotal;
@@ -25,18 +27,11 @@ public class Presupuesto {
     }
 
     // Getters & Setters
-    public int getCodigoCliente() {
-        return codigoCliente;
-    }
-    public void setCodigoCliente(int codigoCliente) {
-        this.codigoCliente = codigoCliente;
-    }
-
-    public int getNpresupuesto() {
+    public int getnPresupuesto() {
         return nPresupuesto;
     }
-    public void setNpresupuesto(int npresupuesto) {
-        this.nPresupuesto = npresupuesto;
+    public void setnPresupuesto(int nPresupuesto) {
+        this.nPresupuesto = nPresupuesto;
     }
 
     public String getConcepto() {
@@ -53,18 +48,24 @@ public class Presupuesto {
         this.precioTotal = precioTotal;
     }
 
+    public double getPrecioFinalDesc() {
+        return precioFinalDesc;
+    }
+    public void setPrecioFinalDesc(double precioFinalDesc) {
+        this.precioFinalDesc = precioFinalDesc;
+    }
+
+    public double getPrecioFinalIVA() {
+        return precioFinalIVA;
+    }
+    public void setPrecioFinalIVA(double precioFinalIVA) {
+        this.precioFinalIVA = precioFinalIVA;
+    }
+
     public String getEstado() {
         return estado;
     }
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public double getPrecioFinalDesc() {
-        return precioFinalDesc;
-    }
-
-    public double getPrecioFinalIVA() {
-        return precioFinalIVA;
     }
 }

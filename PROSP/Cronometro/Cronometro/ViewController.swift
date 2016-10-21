@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
     func start() {
         inTime = 0
-        timer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: Selector("time") , userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval (0.1, target: self, selector: Selector("time") , userInfo: nil, repeats: true)
         
     }
     
