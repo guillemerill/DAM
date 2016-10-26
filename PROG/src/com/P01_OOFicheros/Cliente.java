@@ -18,12 +18,12 @@ public class Cliente implements Serializable {
 
     public Cliente() {}
 
-    public Cliente(String nombre, String apellidos, String telefono, boolean descuento, PresupuestoList presupuestos) {
+    public Cliente(String nombre, String apellidos, String telefono, boolean descuento) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.descuento = descuento;
-        this.presupuestos = presupuestos;
+        this.presupuestos = new PresupuestoList();
     }
 
     // Getters and setters
@@ -64,7 +64,9 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "do {\n" +
+                "            estado = inputString(\"¿Estado? (Aceptado/Rechazado/Pendiente)?\");\n" +
+                "        } while (!estado.equalsIgnoreCase(\"aceptado\") && !estado.equalsIgnoreCase(\"rechazado\") && !estado.equalsIgnoreCase(\"pendiente\"));" +
                 ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", telefono='" + telefono + '\'' +

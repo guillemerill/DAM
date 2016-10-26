@@ -69,13 +69,14 @@ public class Main {
                 System.out.println("Respuesta incorrecta. Escribe SI o NO");
             }
         } while (!respuesta.equalsIgnoreCase("SI") && !respuesta.equalsIgnoreCase("no"));
-        Cliente c = new Cliente(nombre, apellidos, telefono, descuento, new PresupuestoList());
+        Cliente c = new Cliente(nombre, apellidos, telefono, descuento);
 
         clientes.altaCliente(c);
 
         miFichero.save(clientes);
         System.out.println("Cliente dado de alta.");
     }
+
     // 2
     private static void nuevoPresupuesto() {
         String telf = inputString("Introduce el teléfono: ");
@@ -111,16 +112,30 @@ public class Main {
         miFichero.save(clientes);
         System.out.println("Presupuesto dado de alta.");
     }
+
     // 3
     private static void mostrarPendientes() {
-        for(Cliente c : clientes.getLista()) {
-            for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
-                if (p.getEstado().equalsIgnoreCase("Pendiente")) {
-                    System.out.println(clientes.mostrarClientePresupuesto(c, p));
+        boolean noPres = true;
+        if (clientes.getLista() != null) {
+            for (Cliente c : clientes.getLista()) {
+                if (c.getPresupuestos().getPresupuestolist() != null) {
+                    noPres = false;
+                    for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                        if (p.getEstado().equalsIgnoreCase("Pendiente")) {
+                            System.out.println(clientes.mostrarClientePresupuesto(c, p));
+                        }
+                    }
                 }
             }
+        } else {
+            System.out.println("No hay clientes.");
+        }
+
+        if (noPres) {
+            System.out.println("No hay presupuestos");
         }
     }
+
     // 4.- Listado de presupuestos de un cliente determinado. Solicitará el teléfono del cliente y mostrará todos los datos de los presupuestos que se hayan emitido para dicho cliente.
     private static void mostrarPresupuestosCliente() {
         String telf = inputString("Introduce el número de teléfono:");
@@ -132,27 +147,49 @@ public class Main {
             }
         }
     }
+
     // 5
     private static void mostrarRechazados() {
-        for(Cliente c : clientes.getLista()) {
-            for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
-                if (p.getEstado().equalsIgnoreCase("Rechazado")) {
-                    System.out.println(clientes.mostrarClientePresupuesto(c, p));
+        boolean noPres = true;
+        if (clientes.getLista() != null) {
+            for(Cliente c : clientes.getLista()) {
+                if (c.getPresupuestos().getPresupuestolist() != null) {
+                    noPres = false;
+                    for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                        if (p.getEstado().equalsIgnoreCase("Rechazado")) {
+                            System.out.println(clientes.mostrarClientePresupuesto(c, p));
+                        }
+                    }
                 }
             }
+        } else {
+            System.out.println("No hay clientes.");
+        }
+
+        if (noPres) {
+            System.out.println("No hay presupuestos");
         }
     }
+
     // 6
     private static void allClientes() {
-        for(Cliente c : clientes.getLista()) {
-            System.out.println(clientes.listadoCliente(c));
+        if (clientes.getLista() != null) {
+            for (Cliente c : clientes.getLista()) {
+                System.out.println(clientes.listadoCliente(c));
+            }
+        } else {
+            System.out.println("No hay clientes");
         }
     }
+
     // 7
     private static void modificarPresupuesto() {
         Integer nPresupuesto = inputInt("Número de presupuesto: ");
-        String estado = inputString("Estado: ");
-        clientes.obtenerPresupuesto(nPresupuesto, estado);
+        String estado;
+        do {
+            estado = inputString("¿Estado? (Aceptado/Rechazado/Pendiente)?");
+        } while (!estado.equalsIgnoreCase("aceptado") && !estado.equalsIgnoreCase("rechazado") && !estado.equalsIgnoreCase("pendiente"));
+        clientes.cambiarPresupuesto(nPresupuesto, estado);
         miFichero.save(clientes);
     }
 
@@ -167,6 +204,4 @@ public class Main {
         System.out.println("7. Cambiar estado de un presupuesto");
         System.out.println("8. Salir");
     }
-
-    // 8.- Salir: El programa deberá finalizar. Los datos quedarán guardados.
 }

@@ -58,7 +58,7 @@ public class ClienteList implements Serializable {
                 '}';
     }
 
-    public void obtenerPresupuesto(int codigo, String estado) {
+    public void cambiarPresupuesto(int codigo, String estado) {
         boolean encontrado = false;
         for(Cliente c : listaCliente) {
             for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
