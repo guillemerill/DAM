@@ -7,13 +7,9 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-/**
- * Created by DAM on 20/10/16.
- */
 public interface JugadorRepository extends JpaRepository<Jugador, Long> {
     /*
-    a. Buscar jugadores por nombre, de manera que no sea necesario introducir el nombre
-    completo.
+
     b. Buscar jugadores que hayan conseguido un número mayor o igual a un número de canastas
     especificado como parámetro.
     c. Buscar jugadores que hayan efectuado un número de asistencias dentro de un rango
@@ -27,57 +23,58 @@ public interface JugadorRepository extends JpaRepository<Jugador, Long> {
     canastas, asistencias y rebotes.
      */
 
-    // Spring Data Queries
-    List<Jugador> findByYearOfFabGreaterThanEqual(Integer yearOfFab);
+    //Spring Data Queries
+    // a. Buscar jugadores por nombre, de manera que no sea necesario introducir el nombre completo.
+    List<Jugador> findByName(Integer yearOfFab);
 
-    List<Jugador> findByYearOfFabLessThan(Integer yearOfFab);
+    List<Car> findByYearOfFabLessThan(Integer yearOfFab);
 
-    List<Jugador> findByYearOfFabBetween(Integer min, Integer max);
+    List<Car> findByYearOfFabBetween(Integer min, Integer max);
 
-    List<Jugador> findByPriceGreaterThanEqual(Double price);
+    List<Car> findByPriceGreaterThanEqual(Double price);
 
-    List<Jugador> findByPriceBetween(Double min, Double max);
+    List<Car> findByPriceBetween(Double min, Double max);
 
-    Jugador findByPlateNumber(String plateNumber);
+    Car findByPlateNumber(String plateNumber);
 
-    List<Jugador> findByBrandAndModel(String brand, String model);
+    List<Car> findByBrandAndModel(String brand, String model);
 
-    List<Jugador> findByBrandAndPrice(String brand, Double price);
+    List<Car> findByBrandAndPrice(String brand, Double price);
 
-    List<Jugador> findByBrandAndModelAndPriceGreaterThanEqual(String brand, String model, Double price);
+    List<Car> findByBrandAndModelAndPriceGreaterThanEqual(String brand, String model, Double price);
 
-    List<Jugador> findByBrand(String brand);
+    List<Car> findByBrand(String brand);
 
-    List<Jugador> findByYearOfFab(Integer yearOfFab);
-
+    List<Car> findByYearOfFab(Integer yearOfFab);
 
     //JPQL Queries
 
-    @Query("SELECT AVG(jug.price) from Jugador jug WHERE jug.brand = :brand ")
-    Double findAveragePerBrand(@Param("brand") String brand);
+    @Query("SELECT * from Jugador jug WHERE jug.nombre LIKE '%:nombre%' ")
+    Jugador findByName(@Param("nombre") String nombre);
 
-    @Query("SELECT jug FROM Jugador jug WHERE jug.plateNumber LIKE CONCAT('%',:plateNumberPart,'%')")
-    List<Jugador> findCarByPlateNumberSubstring(@Param("plateNumberPart") String plateNumberPart);
+    @Query("SELECT car FROM Car car WHERE car.plateNumber LIKE CONCAT('%',:plateNumberPart,'%')")
+    List<Car> findCarByPlateNumberSubstring(@Param("plateNumberPart") String plateNumberPart);
 
     //Forma2. Con Spring Data Query
 
-    List<Jugador> findByPlateNumberContains(String plateNumberPart);
+    List<Car> findByPlateNumberContains(String plateNumberPart);
 
-    @Query("SELECT jug.brand, AVG(jug.price), MIN(jug.price), MAX(jug.price) " +
-            "FROM Jugador jug " +
+    @Query("SELECT car.brand, AVG(car.price), MIN(car.price), MAX(car.price) " +
+            "FROM Car car " +
             "GROUP BY car.brand")
     List<Object[]> AvgAndMaxAndMinPricesPerBrand();
 
     //Si no especificamos es asc por defecto
-    @Query("SELECT jug.brand, AVG(jug.price), MIN(jug.price), MAX(jug.price) " +
-            "FROM Jugador jug " +
-            "GROUP BY jug.brand " +
-            "ORDER BY AVG(jug.price) DESC ")
+    @Query("SELECT car.brand, AVG(car.price), MIN(car.price), MAX(car.price) " +
+            "FROM Car car " +
+            "GROUP BY car.brand " +
+            "ORDER BY AVG(car.price) DESC ")
     List<Object[]> AvgAndMaxAndMinPricesPerBrandOrderedByAVGPrice();
 
 
-    @Query("SELECT jug.yearOfFab, COUNT(jug) " +
-            "FROM Jugador jug " +
-            "GROUP BY jug.yearOfFab")
+    @Query("SELECT car.yearOfFab, COUNT(car) " +
+            "FROM Car car " +
+            "GROUP BY car.yearOfFab")
     List<Object[]> CarsMadeByYear();
+
 }

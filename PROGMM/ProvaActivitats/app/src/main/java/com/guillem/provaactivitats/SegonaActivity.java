@@ -11,7 +11,7 @@ public class SegonaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segona);
-        Intent intent = this.getIntent();*
+        Intent intent = this.getIntent();
         int id = intent.getIntExtra("id", 0);
         String text = intent.getStringExtra("title");
         TextView textView = (TextView) findViewById(R.id.textView);

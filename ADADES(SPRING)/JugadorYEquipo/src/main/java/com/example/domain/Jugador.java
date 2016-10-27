@@ -19,6 +19,8 @@ public class Jugador {
     private int nAsistencias;
     private int nRebotes;
     private String posicion;
+    //@ManyToOne
+    //private Equipo equipo;
 
     // Constructors
     public Jugador() {
@@ -83,6 +85,7 @@ public class Jugador {
     public void setPosicion(String posicion) {
         this.posicion = posicion;
     }
+
 
     // Methods
 
