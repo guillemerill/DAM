@@ -50,13 +50,24 @@ public class Main {
         } while (opcion != 8);
 
     }
+    private static void mostrarMenu() {
+        System.out.println(" PRESUPUESTOS ");
+        System.out.println("1. Alta cliente");
+        System.out.println("2. Nuevo presupuesto");
+        System.out.println("3. Presupuestos pendientes (de aceptar o rechazar)");
+        System.out.println("4. Listado de presupuestos de un cliente determinado");
+        System.out.println("5. Listado de presupuestos rechazados");
+        System.out.println("6. Listado de clientes, donde aparezca también el total de presupuestos que tiene cada uno");
+        System.out.println("7. Cambiar estado de un presupuesto");
+        System.out.println("8. Salir");
+    }
 
     // 1
     private static void nuevoCliente() {
+        System.out.println("**** NUEVO CLIENTE ****");
         String nombre = inputString("Nombre: ");
         String apellidos = inputString("Apellidos: ");
         String telefono = inputString("Telefono: ");
-
         String respuesta;
         boolean descuento = false;
         do {
@@ -69,27 +80,25 @@ public class Main {
                 System.out.println("Respuesta incorrecta. Escribe SI o NO");
             }
         } while (!respuesta.equalsIgnoreCase("SI") && !respuesta.equalsIgnoreCase("no"));
+
         Cliente c = new Cliente(nombre, apellidos, telefono, descuento);
 
-        clientes.altaCliente(c);
+        if (clientes.altaCliente(c)) {
+            miFichero.save(clientes);
+            System.out.println("Cliente dado de alta.");
+        } else
+            System.out.println("El teléfono ya está registrado");
 
-        miFichero.save(clientes);
-        System.out.println("Cliente dado de alta.");
     }
 
     // 2
     private static void nuevoPresupuesto() {
+        System.out.println("**** NUEVO PRESUPUESTO ****");
         String telf = inputString("Introduce el teléfono: ");
 
-        boolean registrado = false;
-        for(Cliente carnet : clientes.getLista()) {
-            if(carnet.getTelefono().equals(telf)) {
-                registrado = true;
-            }
-        }
-
-        if (!registrado)
+        if (!clientes.comprobarTelf(telf)) {
             nuevoCliente();
+        }
 
         Integer nPresupuesto = inputInt("Número de presupuesto: ");
         String concepto = inputString("Concepto: ");
@@ -99,18 +108,17 @@ public class Main {
             estado = inputString("¿Estado? (Aceptado/Rechazado/Pendiente)?");
         } while (!estado.equalsIgnoreCase("aceptado") && !estado.equalsIgnoreCase("rechazado") && !estado.equalsIgnoreCase("pendiente"));
         Double precioFinalDesc = precioTotal;
-         for(Cliente c : clientes.getListaCliente()) {
-            if (c.getTelefono().equals(telf)) {
-                if (c.isDescuento())
-                    precioFinalDesc = precioTotal + (precioTotal * 0.05);
-            }
-        }
+        if (clientes.esVIP(telf))
+            precioFinalDesc = precioTotal + (precioTotal * 0.05);
         Double precioFinalIVA = precioFinalDesc + (precioFinalDesc * 0.21);
 
         Presupuesto p = new Presupuesto( nPresupuesto, concepto, precioTotal, precioFinalDesc, precioFinalIVA, estado);
-        clientes.altaPresupuesto(p, telf);
-        miFichero.save(clientes);
-        System.out.println("Presupuesto dado de alta.");
+
+        if (clientes.altaPresupuesto(p, telf)) {
+            miFichero.save(clientes);
+            System.out.println("Presupuesto dado de alta.");
+        } else
+            System.out.println("Ha ocurrido un error.");
     }
 
     // 3
@@ -139,12 +147,16 @@ public class Main {
     // 4.- Listado de presupuestos de un cliente determinado. Solicitará el teléfono del cliente y mostrará todos los datos de los presupuestos que se hayan emitido para dicho cliente.
     private static void mostrarPresupuestosCliente() {
         String telf = inputString("Introduce el número de teléfono:");
-        for(Cliente c : clientes.getLista()) {
-            if(c.getTelefono().equals(telf)) {
-                for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
-                    System.out.println(clientes.mostrarClientePresupuesto(c, p));
+        if (clientes.comprobarTelf(telf)) {
+            for (Cliente c : clientes.getLista()) {
+                if (c.getTelefono().equals(telf)) {
+                    for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                        System.out.println(clientes.mostrarClientePresupuesto(c, p));
+                    }
                 }
             }
+        } else {
+            System.out.println("No se ha encontrado el cliente");
         }
     }
 
@@ -189,19 +201,13 @@ public class Main {
         do {
             estado = inputString("¿Estado? (Aceptado/Rechazado/Pendiente)?");
         } while (!estado.equalsIgnoreCase("aceptado") && !estado.equalsIgnoreCase("rechazado") && !estado.equalsIgnoreCase("pendiente"));
-        clientes.cambiarPresupuesto(nPresupuesto, estado);
-        miFichero.save(clientes);
+
+        if (clientes.cambiarPresupuesto(nPresupuesto, estado)) {
+            miFichero.save(clientes);
+            System.out.println("Presupuesto modificado");
+        } else
+            System.out.println("No se ha encontrado el presupuesto seleccionado.");
     }
 
-    private static void mostrarMenu() {
-        System.out.println(" PRESUPUESTOS ");
-        System.out.println("1. Alta cliente");
-        System.out.println("2. Nuevo presupuesto");
-        System.out.println("3. Presupuestos pendientes (de aceptar o rechazar)");
-        System.out.println("4. Listado de presupuestos de un cliente determinado");
-        System.out.println("5. Listado de presupuestos rechazados");
-        System.out.println("6. Listado de clientes, donde aparezca también el total de presupuestos que tiene cada uno");
-        System.out.println("7. Cambiar estado de un presupuesto");
-        System.out.println("8. Salir");
-    }
+
 }

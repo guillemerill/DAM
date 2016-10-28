@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_60" class="java.beans.XMLDecoder">
+ <object class="com.P01_OOFicheros.ClienteList">
+  <void property="listaCliente">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.P01_OOFicheros.Cliente">
+      <void property="apellidos">
+       <string>Erill</string>
+      </void>
+      <void property="descuento">
+       <boolean>true</boolean>
+      </void>
+      <void property="nombre">
+       <string>Guillem</string>
+      </void>
+      <void property="presupuestos">
+       <object class="com.P01_OOFicheros.PresupuestoList">
+        <void property="presupuestolist">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="com.P01_OOFicheros.Presupuesto">
+            <void property="concepto">
+             <string>hola</string>
+            </void>
+            <void property="estado">
+             <string>aceptado</string>
+            </void>
+            <void property="nPresupuesto">
+             <int>1</int>
+            </void>
+            <void property="precioFinalDesc">
+             <double>129.15</double>
+            </void>
+            <void property="precioFinalIVA">
+             <double>156.2715</double>
+            </void>
+            <void property="precioTotal">
+             <double>123.0</double>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="com.P01_OOFicheros.Presupuesto">
+            <void property="concepto">
+             <string>hola2</string>
+            </void>
+            <void property="estado">
+             <string>Pendiente</string>
+            </void>
+            <void property="nPresupuesto">
+             <int>2</int>
+            </void>
+            <void property="precioFinalDesc">
+             <double>270.9</double>
+            </void>
+            <void property="precioFinalIVA">
+             <double>327.789</double>
+            </void>
+            <void property="precioTotal">
+             <double>258.0</double>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="telefono">
+       <string>1</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.P01_OOFicheros.Cliente">
+      <void property="apellidos">
+       <string>Rodrogas</string>
+      </void>
+      <void property="nombre">
+       <string>Pol</string>
+      </void>
+      <void property="presupuestos">
+       <object class="com.P01_OOFicheros.PresupuestoList">
+        <void property="presupuestolist">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="com.P01_OOFicheros.Presupuesto">
+            <void property="concepto">
+             <string>hol3</string>
+            </void>
+            <void property="estado">
+             <string>PENDIENTE</string>
+            </void>
+            <void property="nPresupuesto">
+             <int>3</int>
+            </void>
+            <void property="precioFinalDesc">
+             <double>8526.0</double>
+            </void>
+            <void property="precioFinalIVA">
+             <double>10316.46</double>
+            </void>
+            <void property="precioTotal">
+             <double>8526.0</double>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="com.P01_OOFicheros.Presupuesto">
+            <void property="concepto">
+             <string>5</string>
+            </void>
+            <void property="estado">
+             <string>pendiente</string>
+            </void>
+            <void property="nPresupuesto">
+             <int>1</int>
+            </void>
+            <void property="precioFinalDesc">
+             <double>5.0</double>
+            </void>
+            <void property="precioFinalIVA">
+             <double>6.05</double>
+            </void>
+            <void property="precioTotal">
+             <double>5.0</double>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="telefono">
+       <string>2</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

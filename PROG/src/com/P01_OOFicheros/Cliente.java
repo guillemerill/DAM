@@ -64,10 +64,8 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "do {\n" +
-                "            estado = inputString(\"¿Estado? (Aceptado/Rechazado/Pendiente)?\");\n" +
-                "        } while (!estado.equalsIgnoreCase(\"aceptado\") && !estado.equalsIgnoreCase(\"rechazado\") && !estado.equalsIgnoreCase(\"pendiente\"));" +
-                ", nombre='" + nombre + '\'' +
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", descuento=" + descuento +

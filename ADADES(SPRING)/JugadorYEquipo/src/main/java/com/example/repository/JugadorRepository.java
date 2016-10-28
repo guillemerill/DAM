@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface JugadorRepository extends JpaRepository<Jugador, Long> {
     /*
-
+    a. Buscar jugadores por nombre, de manera que no sea necesario introducir el nombre completo.
     b. Buscar jugadores que hayan conseguido un número mayor o igual a un número de canastas
     especificado como parámetro.
     c. Buscar jugadores que hayan efectuado un número de asistencias dentro de un rango
@@ -24,10 +24,8 @@ public interface JugadorRepository extends JpaRepository<Jugador, Long> {
      */
 
     //Spring Data Queries
-    // a. Buscar jugadores por nombre, de manera que no sea necesario introducir el nombre completo.
     List<Jugador> findByName(Integer yearOfFab);
-
-    List<Car> findByYearOfFabLessThan(Integer yearOfFab);
+    List<Jugador> findByYCanastasGreaterOrEqual(Integer nCanastas);
 
     List<Car> findByYearOfFabBetween(Integer min, Integer max);
 

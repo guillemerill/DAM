@@ -24,29 +24,47 @@ public class ClienteList implements Serializable {
     }
 
     // Methods
-    public void altaCliente(Cliente c) {
-        boolean registrado = false;
+    public boolean comprobarTelf(String telf) {
         if (listaCliente != null) {
-            for (Cliente telf : listaCliente) {
-                if (telf.getTelefono().equals(c.getTelefono())) {
-                    registrado = true;
+            for (Cliente c : listaCliente) {
+                if (c.getTelefono().equals(telf)) {
+                    return true;
                 }
             }
         } else {
-            registrado = false;
             listaCliente = new ArrayList<>();
+            comprobarTelf(telf);
         }
-
-        if (registrado)     System.out.println("El teléfono ya está registrado");
-        else    listaCliente.add(c);
+        return false;
+    }
+    public boolean esVIP(String telf) {
+        if (listaCliente != null) {
+            for (Cliente c : listaCliente) {
+                if (c.getTelefono().equals(telf)) {
+                    if (c.isDescuento())
+                        return true;
+                }
+            }
+        }
+        return false;
     }
 
-    public void altaPresupuesto(Presupuesto p, String telf) {
+    public boolean altaCliente(Cliente c) {
+        if (!comprobarTelf(c.getTelefono())) {
+            listaCliente.add(c);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean altaPresupuesto(Presupuesto p, String telf) {
         for(Cliente c : listaCliente) {
             if (c.getTelefono().equals(telf)) {
                 c.getPresupuestos().alta(p);
+                return true;
             }
         }
+        return false;
     }
 
     public String listadoCliente(Cliente c) {
@@ -58,20 +76,18 @@ public class ClienteList implements Serializable {
                 '}';
     }
 
-    public void cambiarPresupuesto(int codigo, String estado) {
-        boolean encontrado = false;
-        for(Cliente c : listaCliente) {
-            for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
-                if (p.getnPresupuesto() == codigo) {
-                    encontrado = true;
-                    p.setEstado(estado);
+    public boolean cambiarPresupuesto(int codigo, String estado) {
+        if (listaCliente != null) {
+            for (Cliente c : listaCliente) {
+                for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
+                    if (p.getnPresupuesto() == codigo) {
+                        p.setEstado(estado);
+                        return true;
+                    }
                 }
             }
         }
-        if (encontrado)
-            System.out.println("Se ha modificado correctamente.");
-        else
-            System.out.println("No se ha encontrado el presupuesto deseado");
+        return false;
     }
 
     public ArrayList<Cliente> getLista() {
