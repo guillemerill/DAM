@@ -19,20 +19,21 @@ public class Jugador {
     private int nAsistencias;
     private int nRebotes;
     private String posicion;
-    //@ManyToOne
-    //private Equipo equipo;
+    @ManyToOne
+    private Equipo equipo;
 
     // Constructors
     public Jugador() {
     }
 
-    public Jugador(String nombre, String nacim, int nCanastas, int nAsistencias, int nRebotes, String posicion) {
+    public Jugador(String nombre, String nacim, int nCanastas, int nAsistencias, int nRebotes, String posicion, Equipo equipo) {
         this.nombre = nombre;
         this.nacim = nacim;
         this.nCanastas = nCanastas;
         this.nAsistencias = nAsistencias;
         this.nRebotes = nRebotes;
         this.posicion = posicion;
+        this.equipo = equipo;
     }
 
     // Getters & Setters
@@ -86,11 +87,17 @@ public class Jugador {
         this.posicion = posicion;
     }
 
+    public Equipo getEquipo() {
+        return equipo;
+    }
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
+    }
 
-    // Methods
+// Methods
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "Jugador{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +

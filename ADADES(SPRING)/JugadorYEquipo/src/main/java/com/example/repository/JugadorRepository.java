@@ -1,78 +1,42 @@
-package com.example.repository;
+    package com.example.repository;
 
-import com.example.domain.Jugador;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+    import com.example.domain.Jugador;
+    import org.springframework.data.jpa.repository.JpaRepository;
+    import org.springframework.data.jpa.repository.Query;
+    import org.springframework.data.repository.query.Param;
 
-import java.util.List;
+    import java.util.List;
 
-public interface JugadorRepository extends JpaRepository<Jugador, Long> {
-    /*
-    a. Buscar jugadores por nombre, de manera que no sea necesario introducir el nombre completo.
-    b. Buscar jugadores que hayan conseguido un número mayor o igual a un número de canastas
-    especificado como parámetro.
-    c. Buscar jugadores que hayan efectuado un número de asistencias dentro de un rango
-    especificado como parámetro.
-    d. Buscar jugadores que pertenezcan a una posición específica, por ejemplo: base
-    e. Buscar jugadores que hayan nacido en una fecha anterior a una fecha especificada como
-    parámetro.
-    f. Agrupar los jugadores por la posición del campo y devolver para cada grupo la siguiente
-    información: la media de canastas, asistencias y rebotes.
-    g. Lo mismo que el punto anterior pero devolviendo la media, el máximo y el mínimo de
-    canastas, asistencias y rebotes.
-     */
+    public interface JugadorRepository extends JpaRepository<Jugador, Long> {
+        //Spring Data Queries
+        // a. Buscar jugadores por nombre, de manera que no sea necesario introducir el nombre completo.
+        List<Jugador> findBynombreContaining(String nombre);
 
-    //Spring Data Queries
-    List<Jugador> findByName(Integer yearOfFab);
-    List<Jugador> findByYCanastasGreaterOrEqual(Integer nCanastas);
+        // b. Buscar jugadores que hayan conseguido un número mayor o igual a un número de canastas especificado como parámetro.
+        List<Jugador> findBynCanastasGreaterThanEqual(int nCanastas);
 
-    List<Car> findByYearOfFabBetween(Integer min, Integer max);
+        // c. Buscar jugadores que hayan efectuado un número de asistencias dentro de un rango especificado como parámetro.
+        List<Jugador> findBynAsistenciasBetween(int nAsmin, int nAsmax);
 
-    List<Car> findByPriceGreaterThanEqual(Double price);
+        // d. Buscar jugadores que pertenezcan a una posición específica, por ejemplo: base
+        List<Jugador> findByposicionIgnoreCase(String posicion);
 
-    List<Car> findByPriceBetween(Double min, Double max);
-
-    Car findByPlateNumber(String plateNumber);
-
-    List<Car> findByBrandAndModel(String brand, String model);
-
-    List<Car> findByBrandAndPrice(String brand, Double price);
-
-    List<Car> findByBrandAndModelAndPriceGreaterThanEqual(String brand, String model, Double price);
-
-    List<Car> findByBrand(String brand);
-
-    List<Car> findByYearOfFab(Integer yearOfFab);
-
-    //JPQL Queries
-
-    @Query("SELECT * from Jugador jug WHERE jug.nombre LIKE '%:nombre%' ")
-    Jugador findByName(@Param("nombre") String nombre);
-
-    @Query("SELECT car FROM Car car WHERE car.plateNumber LIKE CONCAT('%',:plateNumberPart,'%')")
-    List<Car> findCarByPlateNumberSubstring(@Param("plateNumberPart") String plateNumberPart);
-
-    //Forma2. Con Spring Data Query
-
-    List<Car> findByPlateNumberContains(String plateNumberPart);
-
-    @Query("SELECT car.brand, AVG(car.price), MIN(car.price), MAX(car.price) " +
-            "FROM Car car " +
-            "GROUP BY car.brand")
-    List<Object[]> AvgAndMaxAndMinPricesPerBrand();
-
-    //Si no especificamos es asc por defecto
-    @Query("SELECT car.brand, AVG(car.price), MIN(car.price), MAX(car.price) " +
-            "FROM Car car " +
-            "GROUP BY car.brand " +
-            "ORDER BY AVG(car.price) DESC ")
-    List<Object[]> AvgAndMaxAndMinPricesPerBrandOrderedByAVGPrice();
+        // e. Buscar jugadores que hayan nacido en una fecha anterior a una fecha especificada como parámetro.
+        List<Jugador> findBynacimBefore(String nacim);
 
 
-    @Query("SELECT car.yearOfFab, COUNT(car) " +
-            "FROM Car car " +
-            "GROUP BY car.yearOfFab")
-    List<Object[]> CarsMadeByYear();
+        //JPQL Queries
+        // f. Agrupar los jugadores por la posición del campo y devolver para cada grupo la siguiente información: la media de canastas, asistencias y rebotes.
+        @Query("SELECT AVG(jug.nCanastas), AVG(jug.nAsistencias), AVG(jug.nRebotes) " +
+                "FROM Jugador jug " +
+                "GROUP BY jug.posicion ")
+        List<Object[]> AvgnCanastasAndnAsistenciasAndnRebotesPerposicion();
 
-}
+        //  g. Lo mismo que el punto anterior pero devolviendo la media, el máximo y el mínimo de canastas, asistencias y rebotes.
+        @Query("SELECT AVG(jug.nCanastas), MAX(jug.nCanastas), MIN(jug.nCanastas), AVG(jug.nAsistencias), MAX(jug.nAsistencias), MIN(jug.nAsistencias), AVG(jug.nRebotes), MAX(jug.nRebotes), MIN(jug.nRebotes)   " +
+                "FROM Jugador jug " +
+                "GROUP BY jug.posicion ")
+        List<Object[]> AvgAndMaxAndMinnCanastasAndnAsistenciasAndnRebotesPerposicion();
+
+
+    }
