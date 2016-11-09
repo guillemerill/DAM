@@ -23,7 +23,17 @@ public class VehiculoCarga extends Vehiculo {
     }
 
     // Methods
-    public double alquilerVehiculoCarga(int dias) {
+
+    @Override
+    public String toString() {
+        return "VehiculoCarga{" +
+                "matricula=" + this.getMatricula() +
+                ", PMA=" + PMA +
+                '}';
+    }
+
+    @Override
+    public double alquilar(int dias) {
         return (50 * dias) + (20 * PMA);
     }
 }

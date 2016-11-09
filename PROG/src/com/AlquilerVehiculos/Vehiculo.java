@@ -21,4 +21,8 @@ public class Vehiculo {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
+
+    public double alquilar(int dias) {
+        return 50 * dias;
+    }
 }

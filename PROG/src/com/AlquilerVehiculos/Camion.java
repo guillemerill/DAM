@@ -11,7 +11,16 @@ public class Camion extends Vehiculo {
     }
 
     // Methods
-    public double alquilerCamion(int dias) {
+
+    @Override
+    public String toString() {
+        return "Camion{" +
+                "matricula=" + this.getMatricula() +
+                "}";
+    }
+
+    @Override
+    public double alquilar(int dias) {
         return (50 * dias) + 40;
     }
 }

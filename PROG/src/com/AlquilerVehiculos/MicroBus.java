@@ -23,7 +23,17 @@ public class MicroBus extends Vehiculo {
     }
 
     // Methods
-    public double alquilerMicroBus(int dias) {
+
+    @Override
+    public String toString() {
+        return "MicroBus{" +
+                "matricula=" + this.getMatricula() +
+                ", plazas=" + plazas +
+                '}';
+    }
+
+    @Override
+    public double alquilar(int dias) {
         return (50 * dias) + (2 * this.getPlazas());
     }
 }

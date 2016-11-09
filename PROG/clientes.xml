@@ -6,13 +6,13 @@
     <void method="add">
      <object class="com.P01_OOFicheros.Cliente">
       <void property="apellidos">
-       <string>Erill</string>
+       <string>1</string>
       </void>
       <void property="descuento">
        <boolean>true</boolean>
       </void>
       <void property="nombre">
-       <string>Guillem</string>
+       <string>1</string>
       </void>
       <void property="presupuestos">
        <object class="com.P01_OOFicheros.PresupuestoList">
@@ -21,44 +21,44 @@
           <void method="add">
            <object class="com.P01_OOFicheros.Presupuesto">
             <void property="concepto">
-             <string>hola</string>
+             <string>asd</string>
             </void>
             <void property="estado">
-             <string>aceptado</string>
+             <string>pendiente</string>
             </void>
             <void property="nPresupuesto">
              <int>1</int>
             </void>
             <void property="precioFinalDesc">
-             <double>129.15</double>
+             <double>315.0</double>
             </void>
             <void property="precioFinalIVA">
-             <double>156.2715</double>
+             <double>381.15</double>
             </void>
             <void property="precioTotal">
-             <double>123.0</double>
+             <double>300.0</double>
             </void>
            </object>
           </void>
           <void method="add">
            <object class="com.P01_OOFicheros.Presupuesto">
             <void property="concepto">
-             <string>hola2</string>
+             <string>adasd</string>
             </void>
             <void property="estado">
-             <string>Pendiente</string>
+             <string>rechazado</string>
             </void>
             <void property="nPresupuesto">
-             <int>2</int>
+             <int>1</int>
             </void>
             <void property="precioFinalDesc">
-             <double>270.9</double>
+             <double>315.0</double>
             </void>
             <void property="precioFinalIVA">
-             <double>327.789</double>
+             <double>381.15</double>
             </void>
             <void property="precioTotal">
-             <double>258.0</double>
+             <double>300.0</double>
             </void>
            </object>
           </void>
@@ -74,65 +74,19 @@
     <void method="add">
      <object class="com.P01_OOFicheros.Cliente">
       <void property="apellidos">
-       <string>Rodrogas</string>
+       <string>wer</string>
+      </void>
+      <void property="descuento">
+       <boolean>true</boolean>
       </void>
       <void property="nombre">
-       <string>Pol</string>
+       <string>wer</string>
       </void>
       <void property="presupuestos">
-       <object class="com.P01_OOFicheros.PresupuestoList">
-        <void property="presupuestolist">
-         <object class="java.util.ArrayList">
-          <void method="add">
-           <object class="com.P01_OOFicheros.Presupuesto">
-            <void property="concepto">
-             <string>hol3</string>
-            </void>
-            <void property="estado">
-             <string>PENDIENTE</string>
-            </void>
-            <void property="nPresupuesto">
-             <int>3</int>
-            </void>
-            <void property="precioFinalDesc">
-             <double>8526.0</double>
-            </void>
-            <void property="precioFinalIVA">
-             <double>10316.46</double>
-            </void>
-            <void property="precioTotal">
-             <double>8526.0</double>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="com.P01_OOFicheros.Presupuesto">
-            <void property="concepto">
-             <string>5</string>
-            </void>
-            <void property="estado">
-             <string>pendiente</string>
-            </void>
-            <void property="nPresupuesto">
-             <int>1</int>
-            </void>
-            <void property="precioFinalDesc">
-             <double>5.0</double>
-            </void>
-            <void property="precioFinalIVA">
-             <double>6.05</double>
-            </void>
-            <void property="precioTotal">
-             <double>5.0</double>
-            </void>
-           </object>
-          </void>
-         </object>
-        </void>
-       </object>
+       <object class="com.P01_OOFicheros.PresupuestoList"/>
       </void>
       <void property="telefono">
-       <string>2</string>
+       <string>3</string>
       </void>
      </object>
     </void>

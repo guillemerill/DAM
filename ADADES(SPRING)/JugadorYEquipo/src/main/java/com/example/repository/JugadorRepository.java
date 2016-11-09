@@ -38,5 +38,8 @@
                 "GROUP BY jug.posicion ")
         List<Object[]> AvgAndMaxAndMinnCanastasAndnAsistenciasAndnRebotesPerposicion();
 
+        // b. Devuelve todos los jugadores de un equipo, a partir del nombre completo del equipo.
+        List<Jugador> findByEquipoNombre(String nombre);
+
 
     }

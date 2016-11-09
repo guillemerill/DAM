@@ -23,7 +23,17 @@ public class Coche extends Vehiculo {
     }
 
     // Methods
-    public double alquilerCoche(int dias) {
+
+    @Override
+    public String toString() {
+        return "Coche{" +
+                "matricula=" + this.getMatricula() +
+                ", plazas=" + plazas +
+                '}';
+    }
+
+    @Override
+    public double alquilar(int dias) {
         return (50 * dias) + (1.5 * this.getPlazas() * dias);
     }
 }

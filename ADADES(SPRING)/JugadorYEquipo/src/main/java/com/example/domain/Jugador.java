@@ -106,6 +106,6 @@ public class Jugador {
                 ", nAsistencias=" + nAsistencias +
                 ", nRebotes=" + nRebotes +
                 ", posicion='" + posicion + '\'' +
-                '}';
+                '}'+System.lineSeparator();
     }
 }
