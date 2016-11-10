@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.guillem.dam.llancador.MainActivity">
+
+    <TextView
+        android:text="Navegador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/label1" />
+
+    <Button
+        android:text="Link 3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/link3"
+        android:layout_alignBaseline="@+id/link1"
+        android:layout_alignBottom="@+id/link1"
+        android:layout_toRightOf="@+id/link2"
+        android:layout_toEndOf="@+id/link2" />
+
+    <Button
+        android:text="Link 4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/link4"
+        android:layout_alignBaseline="@+id/link3"
+        android:layout_alignBottom="@+id/link3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Link 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/link2"
+        android:layout_alignBaseline="@+id/link1"
+        android:layout_alignBottom="@+id/link1"
+        android:layout_toRightOf="@+id/link1"
+        android:layout_toEndOf="@+id/link1" />
+
+    <Button
+        android:text="agenda2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tel1"
+        android:layout_toRightOf="@+id/tel1"
+        android:layout_toEndOf="@+id/tel1"
+        android:id="@+id/tel2" />
+
+    <Button
+        android:text="agenda4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tel3"
+        android:layout_toRightOf="@+id/tel3"
+        android:layout_toEndOf="@+id/tel3"
+        android:id="@+id/tel4" />
+
+    <Button
+        android:text="Agenda3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tel3"
+        android:layout_alignBaseline="@+id/tel2"
+        android:layout_alignBottom="@+id/tel2"
+        android:layout_toRightOf="@+id/tel2"
+        android:layout_toEndOf="@+id/tel2" />
+
+    <TextView
+        android:text="Telèfon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label2"
+        android:layout_below="@+id/link1"
+        android:layout_alignRight="@+id/label2"
+        android:layout_alignEnd="@+id/label2" />
+
+    <Button
+        android:text="Link 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/link1"
+        android:layout_below="@+id/label1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="agenda1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tel1"
+        android:layout_below="@+id/label2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Imatges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img1"
+        android:layout_below="@+id/label3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Utilitats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label3"
+        android:layout_below="@+id/tel1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img1"
+        android:layout_toRightOf="@+id/img1"
+        android:layout_toEndOf="@+id/img1"
+        android:id="@+id/notes1" />
+
+</RelativeLayout>
