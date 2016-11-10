@@ -92,6 +92,8 @@ public class BasketService {
         System.out.println(equiporepository.findBylocalidad("Sabadell"));
         System.out.println(jugadorRepository.findByEquipoNombre("Equipo 5"));
         System.out.println(equiporepository.findJugadoresByequipoAndposicion("Equipo 5", "alero"));
-        System.out.println(equiporepository.findByJugadorByequipoAndMAXnCanastas("Equipo 3"));
+        System.out.println(equiporepository.JugadorMaxCanastasEquipo("Equipo 3"));
+
+
     }
 }
