@@ -27,13 +27,13 @@
 
         //JPQL Queries
         // f. Agrupar los jugadores por la posición del campo y devolver para cada grupo la siguiente información: la media de canastas, asistencias y rebotes.
-        @Query("SELECT AVG(jug.nCanastas), AVG(jug.nAsistencias), AVG(jug.nRebotes) " +
+        @Query("SELECT jug.posicion, AVG(jug.nCanastas), AVG(jug.nAsistencias), AVG(jug.nRebotes) " +
                 "FROM Jugador jug " +
                 "GROUP BY jug.posicion ")
         List<Object[]> AvgnCanastasAndnAsistenciasAndnRebotesPerposicion();
 
         //  g. Lo mismo que el punto anterior pero devolviendo la media, el máximo y el mínimo de canastas, asistencias y rebotes.
-        @Query("SELECT AVG(jug.nCanastas), MAX(jug.nCanastas), MIN(jug.nCanastas), AVG(jug.nAsistencias), MAX(jug.nAsistencias), MIN(jug.nAsistencias), AVG(jug.nRebotes), MAX(jug.nRebotes), MIN(jug.nRebotes)   " +
+        @Query("SELECT jug.posicion, AVG(jug.nCanastas), MAX(jug.nCanastas), MIN(jug.nCanastas), AVG(jug.nAsistencias), MAX(jug.nAsistencias), MIN(jug.nAsistencias), AVG(jug.nRebotes), MAX(jug.nRebotes), MIN(jug.nRebotes)   " +
                 "FROM Jugador jug " +
                 "GROUP BY jug.posicion ")
         List<Object[]> AvgAndMaxAndMinnCanastasAndnAsistenciasAndnRebotesPerposicion();

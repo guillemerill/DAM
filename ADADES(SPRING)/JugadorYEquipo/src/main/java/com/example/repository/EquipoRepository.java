@@ -19,7 +19,7 @@ public interface EquipoRepository extends JpaRepository<Equipo, Long> {
     List<Jugador> findJugadoresByequipoAndposicion(@Param("nombre") String nombre, @Param("posicion") String posicion);
 
     // d. Devuelve el jugador que más canastas ha realizado de un equipo determinado como parámetro.
-    @Query("SELECT  jugador " +"FROM Jugador jugador "
+    @Query("SELECT  jugador, MAX(jugador.nCanastas) " +"FROM Jugador jugador "
             +"WHERE jugador.equipo.nombre=:nombre "
             +"ORDER BY jugador.nCanastas DESC")
     List<Jugador> JugadorMaxCanastasEquipo(@Param("nombre") String nombre);
