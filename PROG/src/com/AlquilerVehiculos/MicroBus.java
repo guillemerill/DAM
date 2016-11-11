@@ -34,6 +34,6 @@ public class MicroBus extends Vehiculo {
 
     @Override
     public double alquilar(int dias) {
-        return (50 * dias) + (2 * this.getPlazas());
+        return (50 * dias) + (2 * this.getPlazas()) + (1.5 * this.getPlazas() * dias);
     }
 }

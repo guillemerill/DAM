@@ -42,6 +42,8 @@ public class AlquilerVehiculos {
                     } else if (v.getClass().equals(Camion.class)) {
                         System.out.println("El alquiler ha costado: ");
                         System.out.println(v.alquilar(dias));
+                    } else {
+                        System.out.println("No se ha encontrado el vehiculo.");
                     }
                 }
             }
