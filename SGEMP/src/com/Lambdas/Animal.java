@@ -13,6 +13,7 @@ public class Animal {
         this.potCaminar = potCaminar;
     }
 
+
     public boolean potSaltar() {
         return potSaltar;
     }
@@ -28,5 +29,7 @@ public class Animal {
     public boolean potCaminar() {
         return potCaminar;
     }
+
+
 
 }

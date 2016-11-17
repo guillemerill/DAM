@@ -1,9 +1,6 @@
 package com.Lambdas;
 
-
+@FunctionalInterface
 public interface checkAtribut {
-    public boolean potSaltar();
-    public boolean potVolar();
-    public boolean potNadar();
-    public boolean potCaminar();
+    public void check(Animal a);
 }

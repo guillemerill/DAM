@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         msg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TelfActivity.class);
+                Intent intent = new Intent(MainActivity.this, MsgActivity.class);
                 startActivity(intent);
             }
         });

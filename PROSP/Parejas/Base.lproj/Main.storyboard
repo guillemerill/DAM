@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Parejas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nMr-To-FJq">
+                                <rect key="frame" x="16" y="70" width="164" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nMr-To-FJq" secondAttribute="height" multiplier="164:125" id="Qvf-uR-Hcc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ign-tO-Xit">
+                                <rect key="frame" x="197" y="70" width="162" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ign-tO-Xit" secondAttribute="height" multiplier="162:125" id="EG7-9Z-Omp"/>
+                                </constraints>
+                            </imageView>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3JV-Hf-Bnk">
+                                <rect key="frame" x="16" y="374" width="164" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3JV-Hf-Bnk" secondAttribute="height" multiplier="164:189" id="Rjw-Gh-V7m"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-rH-jY3">
+                                <rect key="frame" x="197" y="367" width="162" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lWe-rH-jY3" secondAttribute="height" multiplier="81:101" id="yBH-uf-VAm"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enpareja!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFE-8i-Tzm">
+                                <rect key="frame" x="58" y="301" width="292" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wFE-8i-Tzm" secondAttribute="height" multiplier="12:1" constant="40" id="gxd-N5-ogc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wFE-8i-Tzm" firstAttribute="top" secondItem="Ign-tO-Xit" secondAttribute="bottom" constant="106" id="6dX-DU-VfV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3JV-Hf-Bnk" secondAttribute="bottom" constant="104" id="9ph-fd-CkJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lWe-rH-jY3" secondAttribute="bottom" constant="98" id="B1F-vA-jw3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wFE-8i-Tzm" secondAttribute="trailing" constant="9" id="C1G-UV-eaC"/>
+                            <constraint firstItem="Ign-tO-Xit" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="DBh-lb-0EN"/>
+                            <constraint firstItem="Ign-tO-Xit" firstAttribute="leading" secondItem="nMr-To-FJq" secondAttribute="trailing" constant="17" id="Flt-tT-6rm"/>
+                            <constraint firstItem="wFE-8i-Tzm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="GkV-IF-X4f"/>
+                            <constraint firstItem="wFE-8i-Tzm" firstAttribute="top" secondItem="Ign-tO-Xit" secondAttribute="bottom" constant="106" id="LwI-vF-KWf"/>
+                            <constraint firstItem="3JV-Hf-Bnk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OoI-K2-eSj"/>
+                            <constraint firstItem="lWe-rH-jY3" firstAttribute="leading" secondItem="3JV-Hf-Bnk" secondAttribute="trailing" constant="17" id="Qlk-hZ-737"/>
+                            <constraint firstItem="lWe-rH-jY3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ts4-T0-ufF"/>
+                            <constraint firstItem="lWe-rH-jY3" firstAttribute="top" secondItem="wFE-8i-Tzm" secondAttribute="bottom" constant="45" id="Vhn-AE-Lgq"/>
+                            <constraint firstItem="Ign-tO-Xit" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aVK-jn-fxo"/>
+                            <constraint firstItem="lWe-rH-jY3" firstAttribute="leading" secondItem="3JV-Hf-Bnk" secondAttribute="trailing" constant="17" id="eOW-zD-Cl4"/>
+                            <constraint firstItem="3JV-Hf-Bnk" firstAttribute="top" secondItem="wFE-8i-Tzm" secondAttribute="bottom" constant="52" id="eby-ZV-2RG"/>
+                            <constraint firstItem="lWe-rH-jY3" firstAttribute="top" secondItem="wFE-8i-Tzm" secondAttribute="bottom" constant="45" id="gW0-hR-gwD"/>
+                            <constraint firstItem="wFE-8i-Tzm" firstAttribute="top" secondItem="nMr-To-FJq" secondAttribute="bottom" constant="106" id="ja4-Xw-Aln"/>
+                            <constraint firstItem="nMr-To-FJq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="mYL-AC-HDm"/>
+                            <constraint firstItem="nMr-To-FJq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="scq-CO-eSo"/>
+                            <constraint firstItem="Ign-tO-Xit" firstAttribute="leading" secondItem="nMr-To-FJq" secondAttribute="trailing" constant="17" id="zLN-mN-Nug"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="frase" destination="wFE-8i-Tzm" id="Ecz-MX-SKA"/>
+                        <outlet property="imagen1" destination="nMr-To-FJq" id="xyC-Nm-E6d"/>
+                        <outlet property="imagen2" destination="Ign-tO-Xit" id="XwV-DR-zPI"/>
+                        <outlet property="picker1" destination="3JV-Hf-Bnk" id="aW9-NV-klX"/>
+                        <outlet property="picker2" destination="lWe-rH-jY3" id="hSN-b3-QG4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>

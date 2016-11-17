@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -172,11 +172,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
     <eat-comment/>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
@@ -231,7 +231,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_sel12h">Mode 12h</string>
     <string name="action_sel24h">Mode 24h</string>
@@ -241,19 +241,19 @@
     <string name="hello_world">Hello world!</string>
     <string name="no_date" translatable="false">--/--/----</string>
     <string name="no_time" translatable="false">--:--:--</string>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="the_time_is">The time is</string>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!--
@@ -265,7 +265,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>

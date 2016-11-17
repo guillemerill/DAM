@@ -9,24 +9,28 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MsgActivity extends AppCompatActivity{
-    private EditText num;
-    private Button btn_trucar;
+
+    private Button btn_enviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_telf);
+        setContentView(R.layout.activity_msg);
 
-        num = (EditText) findViewById(R.id.num);
-        btn_trucar = (Button) findViewById(R.id.btn_trucar);
+        btn_enviar = (Button) findViewById(R.id.btn_enviar);
 
-        btn_trucar.setOnClickListener(new View.OnClickListener() {
+        btn_enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String numero = ((EditText)findViewById(R.id.num)).getText().toString();
-                Uri uri = Uri.parse("tel:"+numero);
-                Intent intent = new Intent(Intent.ACTION_DIAL , uri);
-                startActivity(intent);
+                String asunto = ((EditText)findViewById(R.id.et_asunto)).getText().toString();
+                String msg = ((EditText)findViewById(R.id.et_text)).getText().toString();
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_SUBJECT , asunto);
+                intent.putExtra(Intent.EXTRA_TEXT, msg);
+                intent.setType("message/rfc822");
+                startActivity(Intent.createChooser(intent, "Tria el client de correu"));
+
             }
         });
     }

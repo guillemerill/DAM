@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Trivial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqr-Z5-gu5">
+                                <rect key="frame" x="0.0" y="68" width="375" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Escoge un tema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-8M-oCe">
+                                <rect key="frame" x="20" y="39" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zJ-hY-fDT">
+                                <rect key="frame" x="136" y="287" width="103" height="30"/>
+                                <state key="normal" title="Escoger Tema"/>
+                                <connections>
+                                    <action selector="esc_tema:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFg-F9-Ced"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pregunta" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AD-iV-kYD">
+                                <rect key="frame" x="20" y="323" width="335" height="73"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc6-SI-uvk">
+                                <rect key="frame" x="87" y="404" width="200" height="47"/>
+                                <color key="backgroundColor" red="0.69477766223420545" green="0.89973241120194514" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="res1"/>
+                                <connections>
+                                    <action selector="respuesta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gDq-5Q-aUn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ST9-tg-c4r">
+                                <rect key="frame" x="87" y="459" width="200" height="48"/>
+                                <color key="backgroundColor" red="0.63921568627450975" green="0.87058823529411766" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="res2"/>
+                                <connections>
+                                    <action selector="respuesta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="avj-Rm-WTz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1c-7P-GyJ">
+                                <rect key="frame" x="87" y="515" width="200" height="49"/>
+                                <color key="backgroundColor" red="0.63921568627450975" green="0.87058823529411766" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="res3"/>
+                                <connections>
+                                    <action selector="respuesta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z1H-91-onM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbR-yn-ci4">
+                                <rect key="frame" x="87" y="572" width="200" height="46"/>
+                                <color key="backgroundColor" red="0.63921568627450975" green="0.87058823529411766" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="res4"/>
+                                <connections>
+                                    <action selector="respuesta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mbe-eE-Jm4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEST FINALIZADO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQR-E6-9hb">
+                                <rect key="frame" x="0.0" y="57" width="375" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TU PUNTUACIÓN ES:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25E-at-U5X">
+                                <rect key="frame" x="20" y="134" width="165" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9R-Qw-dhm">
+                                <rect key="frame" x="193" y="143" width="67" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGe-sG-Y1B">
+                                <rect key="frame" x="20" y="638" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btn_escoger" destination="9zJ-hY-fDT" id="nb6-Cw-MnU"/>
+                        <outlet property="btn_res1" destination="Tc6-SI-uvk" id="LN2-LF-bmC"/>
+                        <outlet property="btn_res2" destination="ST9-tg-c4r" id="aw1-oh-Iic"/>
+                        <outlet property="btn_res3" destination="x1c-7P-GyJ" id="1UO-sU-dZX"/>
+                        <outlet property="btn_res4" destination="ZbR-yn-ci4" id="aPT-kj-E1a"/>
+                        <outlet property="lbl_fin" destination="QQR-E6-9hb" id="gCW-Kc-9R0"/>
+                        <outlet property="lbl_pregunta" destination="2AD-iV-kYD" id="p2E-m3-HXC"/>
+                        <outlet property="lbl_punt" destination="25E-at-U5X" id="JcW-u5-Dys"/>
+                        <outlet property="lbl_puntfinal" destination="w9R-Qw-dhm" id="wlC-W8-P6t"/>
+                        <outlet property="lbl_title" destination="VFd-8M-oCe" id="aUF-dk-Srp"/>
+                        <outlet property="picker" destination="gqr-Z5-gu5" id="Zbu-LS-Rz6"/>
+                        <outlet property="puntactual" destination="ZGe-sG-Y1B" id="hEG-8t-flC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258.5" y="447.5"/>
+        </scene>
+    </scenes>
+</document>

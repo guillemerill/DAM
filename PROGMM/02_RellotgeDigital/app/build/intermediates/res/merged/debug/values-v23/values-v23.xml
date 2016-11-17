@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values-v23/values-v23.xml -->
+    <!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/values-v23/values-v23.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu" parent="android:TextAppearance.Material.Widget.ActionBar.Menu"/>
     <style name="Base.TextAppearance.AppCompat.Widget.Button.Inverse" parent="android:TextAppearance.Material.Widget.Button.Inverse"/>

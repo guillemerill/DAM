@@ -18,4 +18,4 @@
     <item android:state_checked="true" android:drawable="@drawable/abc_btn_check_to_on_mtrl_015" />
     <item android:drawable="@drawable/abc_btn_check_to_on_mtrl_000" />
 </selector>
-<!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_btn_check_material.xml -->
+<!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_btn_check_material.xml -->

@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Calculadora
 //
-//  Created by DAM on 20/10/16.
-//  Copyright © 2016 DAM. All rights reserved.
+//  Created by Sergi Garcia on 20/10/16.
+//  Copyright © 2016 Stucom. All rights reserved.
 //
 
 import UIKit

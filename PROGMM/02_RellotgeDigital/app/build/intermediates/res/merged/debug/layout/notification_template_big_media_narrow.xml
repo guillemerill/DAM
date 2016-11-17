@@ -66,4 +66,4 @@
         android:id="@+id/action_divider"
         android:background="?android:attr/dividerHorizontal" />
 </RelativeLayout>
-<!-- From: file:/Users/DAM/IdeaProjects/DAM2/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_big_media_narrow.xml -->
+<!-- From: file:/Users/DAM/Guillem/PROGMM/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_big_media_narrow.xml -->
