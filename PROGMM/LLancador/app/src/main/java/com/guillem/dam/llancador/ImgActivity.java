@@ -17,6 +17,7 @@ import java.io.File;
 
 public class ImgActivity extends AppCompatActivity implements View.OnClickListener {
 
+    // Creem els elements necessaris
     private ImageView imgView;
     private Button btn_galeria, btn_camara;
     private boolean isResource = true;
@@ -26,6 +27,7 @@ public class ImgActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_img);
 
+        // Li donem valor als elements
         imgView = (ImageView) findViewById(R.id.imageView1);
         btn_galeria = (Button) findViewById(R.id.btn_galeria);
         btn_camara = (Button) findViewById(R.id.btn_camara);
@@ -39,6 +41,7 @@ public class ImgActivity extends AppCompatActivity implements View.OnClickListen
         super.onPause();
     }
 
+    // Si no hi ha imatge escollida per l'usuari li posem una per defecte
     public void emptyImageViewer() {
         if (this.isResource) return;
         Drawable drawable = imgView.getDrawable();
@@ -50,6 +53,7 @@ public class ImgActivity extends AppCompatActivity implements View.OnClickListen
         this.isResource = true;
     }
 
+    // Li assignem una funció al onClick de cada Button
     @Override
     public void onClick(View v) {
         if (v.equals(btn_galeria)) selectPhoto();
@@ -59,6 +63,7 @@ public class ImgActivity extends AppCompatActivity implements View.OnClickListen
     private final static int SELECT_PHOTO = 1;
     private final static int CAPTURE_PHOTO = 2;
 
+    // Si triem selectPhoto creem l'Intent d'obrir la galeria
     public void selectPhoto() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
@@ -68,6 +73,7 @@ public class ImgActivity extends AppCompatActivity implements View.OnClickListen
 
     private Uri photoUri;
 
+    // Si triem takePhoto obrim la carpeta on s'han de guardar les imatges, fem l'Intent de fer la foto, li enviem l'uri d'on ha de guardar i s'inicia l'activitat
     public void takePhoto() {
         File dir = getExternalFilesDir(null);
         if (dir == null) {
@@ -82,6 +88,7 @@ public class ImgActivity extends AppCompatActivity implements View.OnClickListen
         startActivityForResult(i, CAPTURE_PHOTO);
     }
 
+    // Ens indica si s'ha recollit la imatge correctment o no, i la fica al imageView
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

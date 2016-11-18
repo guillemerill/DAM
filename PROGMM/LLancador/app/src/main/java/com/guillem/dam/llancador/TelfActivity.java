@@ -22,9 +22,11 @@ public class TelfActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_telf);
 
+        // Li donem valor als elements
         num = (EditText) findViewById(R.id.num);
         btn_trucar = (Button) findViewById(R.id.btn_trucar);
 
+        // Li definim el onClick, li passem el telèfon introduït i fem l'Intent del Telèfon
         btn_trucar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

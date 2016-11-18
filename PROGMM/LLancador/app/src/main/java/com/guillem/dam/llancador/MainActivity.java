@@ -20,54 +20,49 @@ public class MainActivity extends AppCompatActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Iniciem els Buttons i els hi assignem un onClick
 
-        Button nav = (Button) findViewById(R.id.b1);
+        Button nav = (Button) findViewById(R.id.btn_nav);
         nav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Introduïm l'enllaç i li enviem al view
                 Uri uri = Uri.parse("http://www.stucom.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });
 
-        Button img = (Button) findViewById(R.id.b2);
+        Button img = (Button) findViewById(R.id.btn_img);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Iniciem una nova layout
                 Intent intent = new Intent(MainActivity.this, ImgActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button telf = (Button) findViewById(R.id.b3);
+        Button telf = (Button) findViewById(R.id.btn_telf);
         telf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Iniciem una nova layout
                 Intent intent = new Intent(MainActivity.this, TelfActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button msg = (Button) findViewById(R.id.b4);
+        Button msg = (Button) findViewById(R.id.btn_msg);
         msg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Iniciem una nova layout
                 Intent intent = new Intent(MainActivity.this, MsgActivity.class);
                 startActivity(intent);
             }
         });
 
-/*
-// Opció 2
-Intent intent = new Intent(Intent.ACTION_SEND);
-intent.putExtra(Intent.EXTRA_EMAIL , "felix.galindo@stucom.com");
-intent.putExtra(Intent.EXTRA_TEXT, "Cos del correu");
-intent.setType("text/plain");
-startActivity(Intent.createChooser(intent, "Tria el client de correu"));
-
-
-        */
     }
 
 

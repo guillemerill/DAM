@@ -19,6 +19,7 @@ public class MsgActivity extends AppCompatActivity{
 
         btn_enviar = (Button) findViewById(R.id.btn_enviar);
 
+        // Creem el onCick que recull l'assumpte del missatge i el text i crea l'Intent pero triar el client
         btn_enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
