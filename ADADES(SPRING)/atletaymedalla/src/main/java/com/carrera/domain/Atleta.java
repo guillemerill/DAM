@@ -18,16 +18,13 @@ public class Atleta {
     private String apellidos;
     private String nacionalidad;
     private LocalDate nacimiento;
-    @OneToMany
-    private Medalla medalla;
 
     // Constructors
-    public Atleta(String nombre, String apellidos, String nacionalidad, LocalDate nacimiento, Medalla medalla) {
+    public Atleta(String nombre, String apellidos, String nacionalidad, LocalDate nacimiento) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nacionalidad = nacionalidad;
         this.nacimiento = nacimiento;
-        this.medalla = medalla;
     }
 
     public Atleta(){
@@ -69,7 +66,9 @@ public class Atleta {
         this.nacimiento = nacimiento;
     }
 
+
     // Methods
+
     @Override
     public String toString() {
         return "Atleta{" +

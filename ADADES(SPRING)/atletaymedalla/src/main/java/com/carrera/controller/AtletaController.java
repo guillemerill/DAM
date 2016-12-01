@@ -1,100 +1,99 @@
 package com.carrera.controller;
 
-import com.baloncesto.domain.Player;
-import com.baloncesto.repository.PlayerRepository;
+import com.carrera.domain.Atleta;
+import com.carrera.domain.Medalla;
+import com.carrera.domain.TipoMedalla;
+import com.carrera.repository.AtletaRepository;
+import com.carrera.repository.MedallaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import static java.util.stream.Collectors.groupingBy;
 
 @RestController
-@RequestMapping("/players")
+@RequestMapping("/atleta")
 public class AtletaController {
     @Autowired
-    private PlayerRepository playerRepository;
+    private AtletaRepository atletaRepository;
+    @Autowired
+    private MedallaRepository medallaRepository;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Player createPlayer(@RequestBody Player player) {
-        return playerRepository.save(player);
+    public Atleta createAtleta(@RequestBody Atleta atleta) {
+        return atletaRepository.save(atleta);
     }
 
     @PutMapping
-    public Player updatePlayer(@RequestBody Player player) {
-        return playerRepository.save(player);
+    public Atleta updatePlayer(@RequestBody Atleta atleta) {
+        return atletaRepository.save(atleta);
     }
 
     @GetMapping
-    public List<Player> findAll() {
-        return playerRepository.findAll();
+    public List<Atleta> findAllAtletas() {
+        return atletaRepository.findAll();
+    }
+
+    @GetMapping
+    public List<Medalla> findAllMedallas() {
+        return medallaRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Player findById(@PathVariable Long id) {
-        Player player = playerRepository.findOne(id);
-        return player;
+    public Atleta findById(@PathVariable Long id) {
+        Atleta atleta = atletaRepository.findOne(id);
+        return atleta;
     }
-
 
     @DeleteMapping("/{id}")
     public void deletePlayer(@PathVariable Long id) {
-        playerRepository.delete(id);
+        atletaRepository.delete(id);
     }
 
-    // 1. Devolver todos los jugadores ordenados por número de canastas.
-    @GetMapping("/orderBynCanastas")
-    public List<Player> findAllByOrderBynCanastas() {
-        return playerRepository.findAllByOrderBynCanastas();
-    }
 
-    // 2. Devolver todos los jugadores que han conseguido un número de canastas igual o superior a un parámetro especificado en la URL.
-    @GetMapping("/nCanastasGreaterOrEqual/{nCanastas}")
-    public List<Player> findBynCanastasGreaterThan(@PathVariable Integer num) {
-        return playerRepository.findBynCanastasGreaterThan(num);
-    }
+    // 1. Retornar todos los atletas agrupados por nacionalidad mediante un Map<String, List <Atleta>>;
+    @GetMapping("/atletasByNacionalidad")
+    public Map<String, List<Atleta>> groupByNacionalidad(){
+        List<String> nacionalidades = atletaRepository.getAllNacionalidades();
+        List<Atleta> atletas = findAllAtletas();
+        List<Atleta> atletasPorNacionalidad = new ArrayList<>();
+        Map<String, List<Atleta>> atletasNacionalidad = new HashMap<>();
 
-    // 3. Devolver todos los jugadores que han conseguido un número de canastas en un rango determinado (mínimo y máximo).
-    @GetMapping("/nCanastasBetween/{min}/{max}")
-    public List<Player> findBynCanastasBetween(@PathVariable Integer min, Integer max) {
-        return playerRepository.findBynCanastasBetween(min, max);
-    }
-
-    // 4. Devolver los jugadores agrupados por posición mediante un Map.
-    @GetMapping("/posicion")
-    public Map<Posicion, Collection<Player>> findByPosicion() {
-
-//
-//       ArrayList<Jugador> jugadores = new ArrayList<>();
-//
-//       Map<String,List<Jugador>> posicionJugador = new HashMap<>();
-//
-//       posicionJugadores.
-//       forEach(posicionJugadore -> {
-//           posicionJugador.put(posicionJugadores.get(0),(List<Jugador>) posicionJugadores.get(1));
-//       });
-//        return posicionJugador;
-
-        List<Jugador> posicionJugadores = jugadorRepository.findAll();
-
-        ListMultimap<Posicion, Jugador> posiciones = ArrayListMultimap.create();
-
-        for (Jugador p : posicionJugadores) {
-            posiciones.put(p.getPosicion(), p);
+        for(String nac : nacionalidades){
+            atletasPorNacionalidad.clear();
+            for (Atleta a : atletas) {
+                if (nac.equals(a.getNacionalidad())) {
+                    atletasPorNacionalidad.add(a);
+                }
+            }
+            atletasNacionalidad.put(nac, atletasPorNacionalidad);
         }
-        posicionJugadores.forEach(jugador ->
-                posiciones.put(jugador.getPosicion(), jugador));
 
-        System.out.println();
-
-        return posiciones.asMap();
+        return atletasNacionalidad;
     }
-    @GetMapping("/GroupByPosition")
-    public Map<Posicion, List<Jugador>> getJugadoresGroupByPosicion() {
-        return playerRepository.findAll().parallelStream().collect(groupingBy(Player::getPosicion));
+
+    // 2. Retornar todos los atletas agrupados por tipo de medalla mediante un Map<TipoMedalla, List<Atleta>>;
+    @GetMapping("/atletasByTipoMedalla")
+    public Map<TipoMedalla, List<Atleta>> groupByTipoMedalla(){
+        List<TipoMedalla> tipomedallas = medallaRepository.getAllTipoMedallas();
+        List<Medalla> medallas = findAllMedallas();
+        List<Atleta> atletasPorTipoMedalla = new ArrayList<>();
+        Map<TipoMedalla, List<Atleta>> atletasTipoMedalla = new HashMap<>();
+
+        for(TipoMedalla tmed : tipomedallas){
+            atletasPorTipoMedalla.clear();
+            for (Medalla m : medallas) {
+                if (tmed.equals(m.getTipoMedalla())) {
+                    atletasPorTipoMedalla.add(m.getAtleta());
+                }
+            }
+            atletasTipoMedalla.put(tmed, atletasPorTipoMedalla);
+        }
+
+        return atletasTipoMedalla;
     }
 
 }

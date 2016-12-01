@@ -16,16 +16,18 @@ public class Medalla {
     private TipoMedalla tipoMedalla;
     private String especialidad;
     private String competicion;
+    @ManyToOne
+    private Atleta atleta;
 
     // Constructors
-    public Medalla() {
-    }
-
-    public Medalla(TipoMedalla tipoMedalla, String especialidad, String competicion) {
+    public Medalla(TipoMedalla tipoMedalla, String especialidad, String competicion, Atleta atleta) {
         this.tipoMedalla = tipoMedalla;
         this.especialidad = especialidad;
         this.competicion = competicion;
+        this.atleta = atleta;
     }
+
+
 
     // Getters & Setters
     public long getId() {
@@ -56,7 +58,15 @@ public class Medalla {
         this.competicion = competicion;
     }
 
+    public Atleta getAtleta() {
+        return atleta;
+    }
+    public void setAtleta(Atleta atleta) {
+        this.atleta = atleta;
+    }
+
     // Methods
+
     @Override
     public String toString() {
         return "Medalla{" +
@@ -64,6 +74,7 @@ public class Medalla {
                 ", tipoMedalla=" + tipoMedalla +
                 ", especialidad='" + especialidad + '\'' +
                 ", competicion='" + competicion + '\'' +
+                ", atleta=" + atleta +
                 '}';
     }
 
@@ -78,7 +89,8 @@ public class Medalla {
         if (tipoMedalla != medalla.tipoMedalla) return false;
         if (especialidad != null ? !especialidad.equals(medalla.especialidad) : medalla.especialidad != null)
             return false;
-        return competicion != null ? competicion.equals(medalla.competicion) : medalla.competicion == null;
+        if (competicion != null ? !competicion.equals(medalla.competicion) : medalla.competicion != null) return false;
+        return atleta != null ? atleta.equals(medalla.atleta) : medalla.atleta == null;
 
     }
 
@@ -88,6 +100,7 @@ public class Medalla {
         result = 31 * result + (tipoMedalla != null ? tipoMedalla.hashCode() : 0);
         result = 31 * result + (especialidad != null ? especialidad.hashCode() : 0);
         result = 31 * result + (competicion != null ? competicion.hashCode() : 0);
+        result = 31 * result + (atleta != null ? atleta.hashCode() : 0);
         return result;
     }
 }
