@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface MedallaRepository extends JpaRepository<Medalla, Long> {
 
-    @Query("SELECT DISTINCT m.TipoMedalla FROM Medalla m")
+    @Query("SELECT DISTINCT m.tipoMedalla FROM Medalla m")
     List<TipoMedalla> getAllTipoMedallas();
 
 }

@@ -11,52 +11,27 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-import static java.util.stream.Collectors.groupingBy;
 
 @RestController
 @RequestMapping("/atleta")
 public class AtletaController {
     @Autowired
     private AtletaRepository atletaRepository;
+
     @Autowired
     private MedallaRepository medallaRepository;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Atleta createAtleta(@RequestBody Atleta atleta) {
-        return atletaRepository.save(atleta);
-    }
-
-    @PutMapping
-    public Atleta updatePlayer(@RequestBody Atleta atleta) {
-        return atletaRepository.save(atleta);
-    }
 
     @GetMapping
     public List<Atleta> findAllAtletas() {
         return atletaRepository.findAll();
     }
 
-    @GetMapping
-    public List<Medalla> findAllMedallas() {
-        return medallaRepository.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Atleta findById(@PathVariable Long id) {
-        Atleta atleta = atletaRepository.findOne(id);
-        return atleta;
-    }
-
-    @DeleteMapping("/{id}")
-    public void deletePlayer(@PathVariable Long id) {
-        atletaRepository.delete(id);
-    }
-
 
     // 1. Retornar todos los atletas agrupados por nacionalidad mediante un Map<String, List <Atleta>>;
     @GetMapping("/atletasByNacionalidad")
     public Map<String, List<Atleta>> groupByNacionalidad(){
+        // return atletaRepository.findAll().parallelStream().collect(Collectors.groupingBy(Atleta::getNacionalidad));
         List<String> nacionalidades = atletaRepository.getAllNacionalidades();
         List<Atleta> atletas = findAllAtletas();
         List<Atleta> atletasPorNacionalidad = new ArrayList<>();
@@ -78,8 +53,12 @@ public class AtletaController {
     // 2. Retornar todos los atletas agrupados por tipo de medalla mediante un Map<TipoMedalla, List<Atleta>>;
     @GetMapping("/atletasByTipoMedalla")
     public Map<TipoMedalla, List<Atleta>> groupByTipoMedalla(){
+
+        return atletaRepository.findAll().parallelStream().collect(Collectors.groupingBy(Atleta::getNacionalidad));
+
+
         List<TipoMedalla> tipomedallas = medallaRepository.getAllTipoMedallas();
-        List<Medalla> medallas = findAllMedallas();
+        // List<Medalla> medallas = findAllMedallas();
         List<Atleta> atletasPorTipoMedalla = new ArrayList<>();
         Map<TipoMedalla, List<Atleta>> atletasTipoMedalla = new HashMap<>();
 
@@ -95,5 +74,7 @@ public class AtletaController {
 
         return atletasTipoMedalla;
     }
+
+
 
 }
