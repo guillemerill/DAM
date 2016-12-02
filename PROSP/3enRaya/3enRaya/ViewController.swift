@@ -35,30 +35,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var fin: UILabel!
     
+    var arr_button:[UIButton] = [ ]
+    
     // Variables
     var turno:Int = 0
     var j1:[Int] = []
     var j2:[Int] = []
-    
-    // Victorias
-    // Horizontal
-    var v1 = [1, 2, 3]
-    var v2:[Int] = [4, 5, 6]
-    var v3:[Int] = [7, 8, 9]
-    // Vertical
-    var v4:[Int] = [1, 4, 7]
-    var v5:[Int] = [2, 5, 8]
-    var v6:[Int] = [3, 6, 9]
-    // Diagonal
-    var v7:[Int] = [1, 5, 9]
-    var v8:[Int] = [3, 5, 7]
-    
-    
-    
+    var usadas:[Int] = []
+    var victorias:[[Int]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fin.hidden = true;
+        arr_button = [ TL, TC, TR, CL, CC, CR, BL, BC, BR ]
+        victorias = [ [1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7] ]
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,52 +58,60 @@ class ViewController: UIViewController {
     @IBAction func clickPosition(sender: UIButton) {
         // Si es par Jugador 1: O
         // Si es impar Jugador 2: X
-        if (turno % 2 == 0) {
-            sender.setBackgroundImage(UIImage(named: "o_ficha.png"), forState: UIControlState.Normal)
+        if (!usadas.contains(sender.tag)) {
+            if (turno % 2 == 0) {
+                sender.setBackgroundImage(UIImage(named: "o_ficha"), forState: UIControlState.Normal)
             
-            j1.append(sender.tag)
-        
-            if (Set(v1).isSubsetOf(Set(j1)) || Set(v2).isSubsetOf(Set(j1)) || Set(v3).isSubsetOf(Set(j1)) || Set(v4).isSubsetOf(Set(j1)) || Set(v5).isSubsetOf(Set(j1)) || Set(v6).isSubsetOf(Set(j1)) || Set(v7).isSubsetOf(Set(j1)) || Set(v8).isSubsetOf(Set(j1))) {
-                fin.text = "Ha ganado el Jugador 1"
-                fin.hidden = false
+                j1.append(sender.tag)
                 
-                TL.enabled = false
-                TC.enabled = false
-                TR.enabled = false
-                CL.enabled = false
-                CC.enabled = false
-                CR.enabled = false
-                BL.enabled = false
-                BC.enabled = false
-                BR.enabled = false
+            } else {
+                sender.setBackgroundImage(UIImage(named: "x_ficha"), forState: UIControlState.Normal)
+                j2.append(sender.tag)
             }
-        } else {
-            sender.setBackgroundImage(UIImage(named: "x_ficha.png"), forState: UIControlState.Normal)
-            j2.append(sender.tag)
-            
-            if (Set(v1).isSubsetOf(Set(j2)) || Set(v2).isSubsetOf(Set(j2)) || Set(v3).isSubsetOf(Set(j2)) || Set(v4).isSubsetOf(Set(j2)) || Set(v5).isSubsetOf(Set(j2)) || Set(v6).isSubsetOf(Set(j2)) || Set(v7).isSubsetOf(Set(j2)) || Set(v8).isSubsetOf(Set(j2))) {
-                fin.text = "Ha ganado el Jugador 2"
-                fin.hidden = false
-                
-                TL.enabled = false
-                TC.enabled = false
-                TR.enabled = false
-                CL.enabled = false
-                CC.enabled = false
-                CR.enabled = false
-                BL.enabled = false
-                BC.enabled = false
-                BR.enabled = false
+            usadas.append(sender.tag)
+            endGame()
+            //sender.enabled = false
+            turno += 1
+        }
+    }
+    
+    @IBAction func startGame(sender: UIButton) {
+        for btn in arr_button {
+            btn.setBackgroundImage(UIImage(named: ""), forState: UIControlState.Normal)
+        }
+        fin.hidden = true
+        j1.removeAll()
+        j2.removeAll()
+        usadas.removeAll()
+        turno = 0
+    }
+    
+    func endGame() {
+        var acabado:Bool = false
+        for vic in victorias {
+            if (Set(vic).isSubsetOf(Set(j1))) {
+                fin.text = "Los círculos han ganado!"
+                acabado = true
+            }
+            if (Set(vic).isSubsetOf(Set(j2))) {
+                fin.text = "Las cruces han ganado!"
+                acabado = true
             }
         }
         
-        if (turno == 8) {
+        if (turno >= 8) {
+            acabado = true
+            fin.text = "Habéis empatado!"
+        }
+        
+        if (acabado) {
+            for btn in arr_button {
+                usadas.append(btn.tag)
+            }
+            
             fin.hidden = false
         }
-        
-        
-        sender.enabled = false
-        turno += 1
+
     }
 
 }
