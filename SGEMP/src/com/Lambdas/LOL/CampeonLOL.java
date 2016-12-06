@@ -107,6 +107,20 @@ public class CampeonLOL {
     }
 
     // Methods
+    public void addObject(ObjetoLOL obj) {
+        System.out.println("Añadiendo " + obj.getNombre() + "...");
+        hp += obj.getHp();
+        atkDmg += obj.getAtkDmg();
+        atkSpeed += obj.getAtkSpeed();
+        movSpeed += obj.getMovSpeed();
+        HPregen += obj.getHPregen();
+        armor += obj.getArmor();
+        magRes += obj.getMagRes();
+        mana += obj.getMana();
+        List<ObjetoLOL> objetos = getObjetos();
+        objetos.add(obj);
+        setObjetos(objetos);
+    }
 
     @Override
     public String toString() {

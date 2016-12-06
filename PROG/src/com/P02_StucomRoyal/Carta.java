@@ -1,7 +1,7 @@
 package com.P02_StucomRoyal;
 
 /**
- * Todas las cartas tienen un nombre , un coste de elixir (que estará entre 1 y 5) y un nivel de vida (entre 1 y 100).
+ * Todas las cartas tienen un nombre, un coste de elixir (que estará entre 1 y 5) y un nivel de vida (entre 1 y 100).
 
  */
 public class Carta {
@@ -38,6 +38,9 @@ public class Carta {
     public void setVida(int vida) {
         this.vida = vida;
     }
+
+    // Methods
+    public void utilizar(Carta c) {}
 
     @Override
     public String toString() {

@@ -1,12 +1,13 @@
 package com.P02_StucomRoyal;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Cada jugador tiene nombre de usuario, password y número de trofeos conseguidos. Además dispone de un grupo de cartas que ha ido
  consiguiendo durante el juego y que podrá utilizar en sus batallas.
  */
-public class Jugador {
+public class Jugador implements Comparable {
     // Attributes
     private String usuario;
     private String password;
@@ -49,4 +50,24 @@ public class Jugador {
     public void setCartas(ArrayList<Carta> cartas) {
         this.cartas = cartas;
     }
+
+    // Methods
+    @Override
+    public String toString() {
+        return "Jugador{" +
+                "usuario='" + usuario + '\'' +
+                ", password='" + password + '\'' +
+                ", trofeos=" + trofeos +
+                ", cartas=" + cartas +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        int comparatrofeos = ((Jugador)o).getTrofeos();
+
+        return this.trofeos-comparatrofeos;
+    }
+
 }
+

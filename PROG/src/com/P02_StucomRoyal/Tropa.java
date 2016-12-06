@@ -22,8 +22,11 @@ public class Tropa extends Carta {
     }
 
     // Methods
-    public int atacar(int vida) {
-        return vida - (this.ataque / 2);
+
+
+    @Override
+    public void utilizar(Carta c) {
+        c.setVida(c.getVida() - (this.ataque / 2));
     }
 
     @Override

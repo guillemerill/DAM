@@ -34,14 +34,15 @@ public class Hechizo extends Carta{
     }
 
     // Methods
-    public int utilizar(int vida) {
+
+    @Override
+    public void utilizar(Carta c) {
         if (this.modo.equals("ataque")) {
-            return vida - (this.alcance * 2 / 3);
+            c.setVida(c.getVida() - (this.alcance * 2 / 3));
         } else {
-            return vida + (this.alcance * 2 / 3);
+            c.setVida(c.getVida() + (this.alcance * 2 / 3));
         }
     }
-
     @Override
     public String toString() {
         return "Hechizo{" +

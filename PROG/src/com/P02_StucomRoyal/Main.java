@@ -1,7 +1,7 @@
 package com.P02_StucomRoyal;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 import static com.P02_StucomRoyal.EntradaDatos.*;
 
 /**
@@ -11,26 +11,20 @@ import static com.P02_StucomRoyal.EntradaDatos.*;
 
  Crea las clases necesarias para poder guardar los datos de los jugadores y las cartas.
 
-
-
- 3. Crea un menú principal con las siguien tes opciones:
-
-     b. Batalla. Deberán autentifiCarse dos jugadores mediante usuario y password. Una vez autentificados los dos, cada jugador deberá escoger tres cartas entre sus cartas disponibles
-        para hacer la batalla. La suma del elixir de las cartas que escoja no podrá ser superior a 10. Una vez escogidas las cartas de los dos jugadores empezará la batalla.
-        Se decidirá aleatoriamente quien es el que ataca primero. Se calculará entonces el daño causado por cada jugador en el orden en que hayan seleccionado las cartas.
-        Ganará el jugador cuyas cartas tengan más vida al finalizar la batalla. Obtendrá 5 trofeos.
-     c. Obtener el ranking de jugadores por nº de trofeos. Deberá mostrarse el nombre del jugador y el nº de trofeos que tiene, ordenador de mayor a menor.
-
- Se valorará que el di seño de las clases y el código estén optimi zados.
+ Se valorará que el diseño de las clases y el código estén optimizados.
  */
 public class Main {
     // Variable con la lista de Jugadores y Cartas
     private static List<Jugador> jugadores;
     private static List<Carta> cartas;
 
+    private static Jugador jugador1;
+    private static Jugador jugador2;
+
     public static void main(String[] args) {
         jugadores = new ArrayList<>();
         cartas = new ArrayList<>();
+
 
         //  1. En el método principal de la aplicación , crea al menos 3 cartas de cada tipo (tropa, estructura y hechizo) y guárdalas como las cartas disponibles para el juego.
         Tropa tropa1 = new Tropa("Montapuercos", 4, 968, 120);
@@ -61,6 +55,10 @@ public class Main {
         Jugador j3 = new Jugador("Jugador 3", "1234", 0, new ArrayList<>());
         Jugador j4 = new Jugador("Jugador 4", "1234", 0, new ArrayList<>());
 
+        jugadores.add(j1);
+        jugadores.add(j2);
+        jugadores.add(j3);
+        jugadores.add(j4);
 
 
         int opcion;
@@ -74,11 +72,13 @@ public class Main {
            conseguirCartas();
            break;
           case 2:
-           nuevoPresupuesto();
-           break;
+              // 3 b
+              batalla();
+              break;
           case 3:
-           mostrarPendientes();
-           break;
+               // 3 c
+               showRanking();
+               break;
           case 4:
            System.out.println("Hasta la próxima");
            break;
@@ -97,10 +97,10 @@ public class Main {
       */
     private static void menuPrincipal() {
         System.out.println("------ StucomRoyal ------");
-        System.out.println("a. Conseguir cartas");
-        System.out.println("b. Batalla");
-        System.out.println("c. Ranking de jugadores");
-        System.out.println("d. Salir");
+        System.out.println("1. Conseguir cartas");
+        System.out.println("2. Batalla");
+        System.out.println("3. Ranking de jugadores");
+        System.out.println("4. Salir");
     }
 
     /*
@@ -112,179 +112,149 @@ public class Main {
                Un jugador puede tener como máximo 6 cartas disponibles.  Cuando se tenga lleno su cupo de cartas se le informará de ello, se le mostrarán todas sus cartas y se le mandará al menú principal.
      */
     private static void conseguirCartas() {
-       boolean login = false;
-       System.out.println("------ Conseguir cartas ------");
-       System.out.println("Debes iniciar sesión!");
-       String usuario = inputString("Usuario: ");
-       String password = inputString("Password: ");
-       for (Jugador j : jugadores) {
-           if (j.getUsuario().equals(usuario) && j.getPassword().equals(password)) {
-               login = true;
-               for (Carta c : cartas) {
-                   System.out.println(c);
+        boolean login = false;
+        System.out.println("------ Conseguir cartas ------");
+        System.out.println("Debes iniciar sesión!");
+        String usuario = inputString("Usuario: ");
+        String password = inputString("Password: ");
+        if (existeJugador(usuario, password, false)) {
+               int cartas_usu;
+               do {
+                   cartas_usu = jugador1.getCartas().size();
+                   for (Carta c : cartas) {
+                       System.out.println(c);
+                   }
+                   String nombreCarta = inputString("Nombre de la carta: ");
+                   boolean carta_usada = false;
+                   for (Carta c : cartas) {
+                       if (c.getNombre().equals(nombreCarta)) {
+                           if (!jugador1.getCartas().isEmpty()) {
+                               for (Carta usada : jugador1.getCartas()) {
+                                   if (nombreCarta.equals(usada.getNombre())) {
+                                       carta_usada = true;
+                                   }
+                               }
+                           }
+
+                           if (!carta_usada) {
+                               jugador1.getCartas().add(c);
+                           } else {
+                               System.out.println("Ya tienes esta carta!");
+                           }
+
+                       }
+                   }
+               } while (cartas_usu < 6);
+               System.out.println("Ya has llenado tu cupo de cartas, estas son tus cartas:");
+               for (Carta c : jugador1.getCartas()) {
+                   System.out.println(c.toString());
                }
-               String nombreCarta = inputString("Nombre de la carta: ");
-               boolean carta_usada = false;
-               for (Carta c : cartas) {
-                   if (c.getNombre().equals(nombreCarta)) {
-                       if (!j.getCartas().isEmpty()) {
-                            for (Carta usada : j.getCartas()) {
-                                if (nombreCarta.equals(usada.getNombre())) {
-                                    carta_usada = true;
+        }
+    }
+
+
+    /* b. Batalla. Deberán autentificarse dos jugadores mediante usuario y password. Una vez autentificados los dos, cada jugador deberá escoger tres cartas entre sus cartas disponibles
+        para hacer la batalla. La suma del elixir de las cartas que escoja no podrá ser superior a 10. Una vez escogidas las cartas de los dos jugadores empezará la batalla.
+        Se decidirá aleatoriamente quien es el que ataca primero. Se calculará entonces el daño causado por cada jugador en el orden en que hayan seleccionado las cartas.
+        Ganará el jugador cuyas cartas tengan más vida al finalizar la batalla. Obtendrá 5 trofeos.
+     */
+    private static void batalla() {
+        boolean login1 = false;
+        boolean login2 = false;
+        System.out.println("------ Batalla ------");
+        System.out.println("Debéis iniciar sesión!");
+        System.out.println("Jugador 1:");
+        String usuario1 = inputString("Usuario: ");
+        String password1 = inputString("Password: ");
+        List<Carta> jugador1_cartas = new ArrayList<>();
+        System.out.println("Jugador 2:");
+        String usuario2 = inputString("Usuario: ");
+        String password2 = inputString("Password: ");
+        List<Carta> jugador2_cartas = new ArrayList<>();
+
+        int elixirtotal;
+        if (existeJugador(usuario1, password1, false)) {
+            if (existeJugador(usuario2, password2, true)) {
+                jugador1_cartas = escoger(jugador1);
+                jugador2_cartas = escoger(jugador2);
+            }
+
+        }
+
+                        // Empieza la papaya
+                        int j = new Random().nextInt(1); // Si j=0 empieza el jugador1, si j=1 empieza el jugador2
+                        if (j == 0) {
+                            for (Carta c1 : jugador1_cartas) {
+                                if (c1.getClass().equals(Tropa.class)) {
+                                    c1.utilizar(jugador2_cartas.get(0));
+                                } else if (c1.getClass().equals(Estructura.class)) {
+                                    for (Carta cartas : jugador1_cartas) {
+                                        c1.utilizar(cartas);
+                                    }
+                                } else if (c1.getClass().equals(Hechizo.class)) {
+
                                 }
                             }
-                       }
 
-                       if (!carta_usada) {
-                           j.getCartas().add(c);
-                       }
+                        } else if (j == 2) {
 
-                   }
-               }
+                        }
 
-           }
-       }
-       if (!login) {
-           System.out.println("Login incorrecto.");
-       }
-       String respuesta;
-       boolean descuento = false;
-       do {
-        respuesta = inputString("¿Tiene descuento? (SI/NO)?");
-        if (respuesta.equalsIgnoreCase("si")) {
-         descuento = true;
-        } else if (respuesta.equalsIgnoreCase("no")) {
-         descuento = false;
-        } else {
-         System.out.println("Respuesta incorrecta. Escribe SI o NO");
+
+
+
+
+    }
+
+   // 3 c. Obtener el ranking de jugadores por nº de trofeos. Deberá mostrarse el nombre del jugador y el nº de trofeos que tiene, ordenador de mayor a menor.
+    private static void showRanking() {
+        List<Jugador> jugadores_sort = jugadores;
+        Collections.sort(jugadores_sort);
+        int p = 1;
+        for (Jugador j : jugadores_sort) {
+            System.out.println(p + ". " + j.getUsuario() + " - " + j.getTrofeos());
+            p++;
         }
-       } while (!respuesta.equalsIgnoreCase("SI") && !respuesta.equalsIgnoreCase("no"));
-
-       Cliente c = new Cliente(nombre, apellidos, telefono, descuento);
-
-       if (clientes.altaCliente(c)) {
-        miFichero.save(clientes);
-        System.out.println("Cliente dado de alta.");
-       } else
-        System.out.println("El teléfono ya está registrado");
-
     }
 
-    // 2
-    private static void nuevoPresupuesto() {
-     System.out.println("**** NUEVO PRESUPUESTO ****");
-     String telf = inputString("Introduce el teléfono: ");
+    private static boolean existeJugador(String usuario, String password, boolean extra) {
+        for (Jugador j : jugadores) {
+            if (j.getUsuario().equals(usuario) && j.getPassword().equals(password)) {
+                if (extra)
+                    jugador2 = j;
+                else
+                    jugador1 = j;
 
-     if (!clientes.comprobarTelf(telf)) {
-      nuevoCliente();
-     }
-
-     Integer nPresupuesto = inputInt("Número de presupuesto: ");
-     String concepto = inputString("Concepto: ");
-     Double precioTotal = inputDouble("Precio total: ");
-     String estado;
-     do {
-      estado = inputString("¿Estado? (Aceptado/Rechazado/Pendiente)?");
-     } while (!estado.equalsIgnoreCase("aceptado") && !estado.equalsIgnoreCase("rechazado") && !estado.equalsIgnoreCase("pendiente"));
-     Double precioFinalDesc = precioTotal;
-     if (clientes.esVIP(telf))
-      precioFinalDesc = precioTotal + (precioTotal * 0.05);
-     Double precioFinalIVA = precioFinalDesc + (precioFinalDesc * 0.21);
-
-     Presupuesto p = new Presupuesto( nPresupuesto, concepto, precioTotal, precioFinalDesc, precioFinalIVA, estado);
-
-     if (clientes.altaPresupuesto(p, telf)) {
-      miFichero.save(clientes);
-      System.out.println("Presupuesto dado de alta.");
-     } else
-      System.out.println("Ha ocurrido un error.");
-    }
-
-    // 3
-    private static void mostrarPendientes() {
-     boolean noPres = true;
-     if (clientes.getLista() != null) {
-      for (Cliente c : clientes.getLista()) {
-       if (c.getPresupuestos().getPresupuestolist() != null) {
-        noPres = false;
-        for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
-         if (p.getEstado().equalsIgnoreCase("Pendiente")) {
-          System.out.println(clientes.mostrarClientePresupuesto(c, p));
-         }
+                return true;
+            }
         }
-       }
-      }
-     } else {
-      System.out.println("No hay clientes.");
-     }
-
-     if (noPres) {
-      System.out.println("No hay presupuestos");
-     }
+        System.out.println(usuario + " no encontrado o password incorrecta.");
+        return false;
     }
 
-    // 4.- Listado de presupuestos de un cliente determinado. Solicitará el teléfono del cliente y mostrará todos los datos de los presupuestos que se hayan emitido para dicho cliente.
-    private static void mostrarPresupuestosCliente() {
-     String telf = inputString("Introduce el número de teléfono:");
-     if (clientes.comprobarTelf(telf)) {
-      for (Cliente c : clientes.getLista()) {
-       if (c.getTelefono().equals(telf)) {
-        for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
-         System.out.println(clientes.mostrarClientePresupuesto(c, p));
+    private static List<Carta> escoger(Jugador jug) {
+        int elixirtotal = 0;
+        List<Carta> cartas_esc = new ArrayList<>();
+        System.out.println(jug.getUsuario() + ", escoge 3 cartas para batallar (El elixir total no debe superar los 10 pts)");
+        for (Carta c : jug.getCartas()) {
+            System.out.println(c);
         }
-       }
-      }
-     } else {
-      System.out.println("No se ha encontrado el cliente");
+        do {
+            String nombreCarta = inputString("Nombre de la carta: ");
+            for (Carta c : cartas) {
+                if (c.getNombre().equals(nombreCarta)) {
+                    if ((elixirtotal + c.getCoste()) <= 10) {
+                        if (!cartas_esc.contains(c)) {
+                            cartas_esc.add(c);
+                            elixirtotal += c.getCoste();
+                        } else
+                            System.out.println("Ya has usado esta carta");
+                    } else {
+                        System.out.println("El coste total supera los 10 pts.");
+                    }
+                }
+            }
+        } while (cartas_esc.size() < 3);
+        return cartas_esc;
      }
-    }
-
-    // 5
-    private static void mostrarRechazados() {
-     boolean noPres = true;
-     if (clientes.getLista() != null) {
-      for(Cliente c : clientes.getLista()) {
-       if (c.getPresupuestos().getPresupuestolist() != null) {
-        noPres = false;
-        for (Presupuesto p : c.getPresupuestos().getPresupuestolist()) {
-         if (p.getEstado().equalsIgnoreCase("Rechazado")) {
-          System.out.println(clientes.mostrarClientePresupuesto(c, p));
-         }
-        }
-       }
-      }
-     } else {
-      System.out.println("No hay clientes.");
-     }
-
-     if (noPres) {
-      System.out.println("No hay presupuestos");
-     }
-    }
-
-    // 6
-    private static void allClientes() {
-     if (clientes.getLista() != null) {
-      for (Cliente c : clientes.getLista()) {
-       System.out.println(clientes.listadoCliente(c));
-      }
-     } else {
-      System.out.println("No hay clientes");
-     }
-    }
-
-    // 7
-    private static void modificarPresupuesto() {
-     Integer nPresupuesto = inputInt("Número de presupuesto: ");
-     String estado;
-     do {
-      estado = inputString("¿Estado? (Aceptado/Rechazado/Pendiente)?");
-     } while (!estado.equalsIgnoreCase("aceptado") && !estado.equalsIgnoreCase("rechazado") && !estado.equalsIgnoreCase("pendiente"));
-
-     if (clientes.cambiarPresupuesto(nPresupuesto, estado)) {
-      miFichero.save(clientes);
-      System.out.println("Presupuesto modificado");
-     } else
-      System.out.println("No se ha encontrado el presupuesto seleccionado.");
-    }
 }

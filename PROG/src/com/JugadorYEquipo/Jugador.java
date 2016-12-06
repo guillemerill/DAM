@@ -3,10 +3,10 @@ package com.JugadorYEquipo;
 import java.time.LocalDate;
 
 /*
-Empeza remos con la entidad jugador . La entidad jugador tendrá los siguientes
-atributos: un identificador , un nombre , una fecha de nacimiento , un número de
-canastas totales , un número de asistencias totales , un número de rebotes
-totales y una posición en el campo por defecto (alero , base , etc.) .
+Empezaremos con la entidad jugador.
+La entidad jugador tendrá los siguientes atributos:
+un identificador , un nombre , una fecha de nacimiento , un número de canastas totales , un número de
+asistencias totales , un número de rebotes totales y una posición en el campo por defecto (alero , base , etc.) .
  */
 public class Jugador implements Cloneable {
 
@@ -20,11 +20,13 @@ public class Jugador implements Cloneable {
     private int asistencias;
     private int rebotes;
     private String posicion;
+    private Equipo equipo;
 
     // Constructores
     public Jugador() {
     }
-    public Jugador(String nombre, LocalDate nacimiento, int canastas, int asistencias, int rebotes, String posicion) {
+
+    public Jugador(String nombre, LocalDate nacimiento, int canastas, int asistencias, int rebotes, String posicion, Equipo equipo) {
         contador++;
         this.identificador = contador;
         this.nombre = nombre;
@@ -33,6 +35,7 @@ public class Jugador implements Cloneable {
         this.asistencias = asistencias;
         this.rebotes = rebotes;
         this.posicion = posicion;
+        this.equipo = equipo;
     }
 
     // Getters y Setters
@@ -83,6 +86,13 @@ public class Jugador implements Cloneable {
     }
     public void setPosicion(String posicion) {
         this.posicion = posicion;
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 
     // Métodos

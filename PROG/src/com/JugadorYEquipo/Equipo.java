@@ -1,9 +1,9 @@
 package com.JugadorYEquipo;
 
 /*
-Inicialmente , la entidad Equipo tendrá los siguientes a tributos: identificador ,
-nombre, localidad y fecha de creación . Un equipo está formado por varios
-jugadores , y un jugador sólo puede participar en un equipo .
+Inicialmente, la entidad Equipo tendrá los siguientes a tributos:
+identificador, nombre, localidad y fecha de creación.
+Un equipo está formado por varios jugadores, y un jugador sólo puede participar en un equipo.
  */
 
 import java.time.LocalDate;
@@ -20,7 +20,6 @@ public class Equipo {
     private String nombre;
     private String localidad;
     private LocalDate creacion;
-    private List<Jugador> jugadores;
 
     // Constructores
     public Equipo() {
@@ -31,17 +30,9 @@ public class Equipo {
         this.nombre = nombre;
         this.localidad = localidad;
         this.creacion = creacion;
-        jugadores = new ArrayList<>();
     }
 
     // Getters y Setters
-    public List<Jugador> getJugadores() {
-        return jugadores;
-    }
-    public void setJugadores(List<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
-
     public int getIdentificador() {
         return identificador;
     }

@@ -22,8 +22,10 @@ public class Estructura extends Carta {
     }
 
     // Methods
-    public int defender(int vida) {
-        return vida + (this.defensa + 8);
+
+    @Override
+    public void utilizar(Carta c) {
+        c.setVida(c.getVida() + (this.defensa + 8));
     }
 
     @Override
