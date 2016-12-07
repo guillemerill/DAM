@@ -105,15 +105,14 @@ public class ObjetoLOL {
 
     @Override
     public String toString() {
-        return "ObjetoLOL{" +
-                "hp=" + hp +
+        return  nombre +
+                ": hp=" + hp +
                 ", atkDmg=" + atkDmg +
                 ", atkSpeed=" + atkSpeed +
                 ", movSpeed=" + movSpeed +
                 ", HPregen=" + HPregen +
                 ", armor=" + armor +
                 ", magRes=" + magRes +
-                ", mana=" + mana +
-                '}';
+                ", mana=" + mana;
     }
 }

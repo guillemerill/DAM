@@ -1,4 +1,4 @@
-package com.Lambdas.EjemploLambdas;
+package com.Lambdas.Zoo;
 
 import com.Lambdas.Zoo.Animal;
 

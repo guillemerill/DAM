@@ -124,9 +124,8 @@ public class CampeonLOL {
 
     @Override
     public String toString() {
-        return "CampeonLOL{" +
-                "nombre='" + nombre + '\'' +
-                ", hp=" + hp +
+        return nombre +
+                ": hp=" + hp +
                 ", atkDmg=" + atkDmg +
                 ", atkSpeed=" + atkSpeed +
                 ", movSpeed=" + movSpeed +
@@ -134,7 +133,6 @@ public class CampeonLOL {
                 ", armor=" + armor +
                 ", magRes=" + magRes +
                 ", mana=" + mana +
-                ", objetos=" + objetos +
-                '}';
+                ", objetos=" + objetos;
     }
 }

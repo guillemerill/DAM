@@ -1,7 +1,5 @@
 package com.Lambdas.Zoo;
 
-import com.Lambdas.EjemploLambdas.checkAtribut;
-
 import java.util.ArrayList;
 
 
@@ -39,9 +37,6 @@ public class LambdasZoo {
                 System.out.println(" no pot caminar");
             }
         };
-
-        checkSalta.check(a1);
-        checkNada.check(a2);
 
         ArrayList<checkAtribut> arr= new ArrayList<>();
         arr.add(checkSalta);

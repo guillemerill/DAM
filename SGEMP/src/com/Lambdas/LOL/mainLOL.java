@@ -26,6 +26,13 @@ public class mainLOL {
         ObjetoLOL obj3 = new ObjetoLOL("Hidra titanica", 450, 35, 0, 0, 0, 0, 0, 0);
         ObjetoLOL obj4 = new ObjetoLOL("Fuerza de trinidad", 250, 25, 0, 5, 0, 0, 0, 250);
 
+        System.out.println("Objetos: ");
+        System.out.println(obj1);
+        System.out.println(obj2);
+        System.out.println(obj3);
+        System.out.println(obj4);
+        System.out.println();
+
         // 5.2 Crea un lambda (amb interfície CheckEstadistica) per cada estadística que retorni true o false segons si l’objecte modifica o no l’estadística.
         checkEstadistica modificaVida = (obj) -> {
             if (obj.getHp() != 0) {
@@ -88,33 +95,36 @@ public class mainLOL {
 
         System.out.println("Objetos que modifican la vida");
         ejecutaLambda(objetos, modificaVida);
-        /*for (ObjetoLOL obj : objetos) {
-            if (modificaVida.check(obj)) {
-                System.out.println(obj);
-            }
-        }*/
-
+        System.out.println();
 
         System.out.println("Objetos que modifican el ataque");
         ejecutaLambda(objetos, modificaAtaque);
+        System.out.println();
 
         System.out.println("Objetos que modifican el movimiento");
         ejecutaLambda(objetos, modificaMovimiento);
+        System.out.println();
 
         System.out.println("Objetos que modifican la regeneración de vida");
         ejecutaLambda(objetos, modificaRegeneraVida);
+        System.out.println();
 
         System.out.println("Objetos que modifican la armadura");
         ejecutaLambda(objetos, modificaArmadura);
+        System.out.println();
 
         System.out.println("Objetos que modifican la resistencia mágica");
         ejecutaLambda(objetos, modificaResistenciaMagica);
+        System.out.println();
 
         System.out.println("Objetos que modifican el maná");
         ejecutaLambda(objetos, modificaMana);
+        System.out.println();
 
         // 7.3	Crea dos Personatges, afegeixi tres nous objectes als personatges  i mostra les estadístiques dels objectes i dels usuaris abans i després d’afegir-hi els objectes
+        System.out.println();
         CampeonLOL p1 = new CampeonLOL("Fiora", 550, 60, 0.625, 345, 8.25, 24, 32.1, 0, new ArrayList<>());
+        System.out.println("Campeón:");
         System.out.println(p1.toString());
         List<ObjetoLOL> p1_objetos = new ArrayList<>();
         p1_objetos.add(obj1);
@@ -124,9 +134,12 @@ public class mainLOL {
             System.out.println(obj.toString());
             p1.addObject(obj);
         }
+        System.out.println("Campeón con objetos: ");
         System.out.println(p1.toString());
 
+        System.out.println();
         CampeonLOL p2 = new CampeonLOL("Poppy", 540, 56, 0.625, 345, 8, 29, 32, 0, new ArrayList<>());
+        System.out.println("Campeón:");
         System.out.println(p2.toString());
         List<ObjetoLOL> p2_objetos = new ArrayList<>();
         p2_objetos.add(obj1);
@@ -136,6 +149,7 @@ public class mainLOL {
             System.out.println(obj.toString());
             p2.addObject(obj);
         }
+        System.out.println("Campeón con objetos: ");
         System.out.println(p2.toString());
 
 
