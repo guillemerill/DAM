@@ -52,7 +52,7 @@ public class Main {
                     altaEquipo(liga);
                     break;
                 case 2:
-                    altaJugador();
+                    altaJugador(liga, jugadores);
                     break;
                 case 3:
                     consultasJugador();
@@ -111,10 +111,9 @@ public class Main {
         String nombre = inputString("Introduce el nombre del equipo: ");
         String localidad = inputString("Introduce la localidad: ");
 
-        Equipo eq = new Equipo(nombre, localidad, TODO);
-        liga.add(eq);
+        liga.add(new Equipo(nombre, localidad, TODO));
     }
-    private static void altaJugador(List<Equipo> liga) {
+    private static void altaJugador(List<Equipo> liga, List<Jugador> jugadores) {
         String nombre = inputString("Introduce el nombre del jugador: ");
         String nacimiento = localdate;
         int canastas = inputInt("Introduce el número de canastas: ");
@@ -133,12 +132,16 @@ public class Main {
         }
 
         if (encontrado)
-            altaJugador().add(new Jugador(nombre, nacimiento, canastas, asistencias, rebotes, posicion, eq);
+            jugadores.add(new Jugador(nombre, nacimiento, canastas, asistencias, rebotes, posicion, eq);
     }
-
-
-}
     private static void consultasJugador() {
+        System.out.println("------ Consultas Jugadores ------");
+        System.out.println("1. Buscar jugadores por nombre.");
+        System.out.println("2. Buscar jugadores con un númrero de canastas igual o superior al introducido.");
+        System.out.println("3. Buscar jugadores por asistencias en un rango.");
+        System.out.println("4. Buscar jugadores por posición.");
+        System.out.println("4. Buscar jugadores menores a la fecha introducida.");
+        System.out.println("5. Salir");
     }
     private static void consultasEquipos() {
     }
