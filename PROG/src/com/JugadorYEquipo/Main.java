@@ -49,10 +49,10 @@ public class Main {
             opcion = inputInt("Escoge una opción");
             switch (opcion) {
                 case 1:
-                    altaEquipo();
+                    altaEquipo(liga);
                     break;
                 case 2:
-                    altaEquipo();
+                    altaJugador();
                     break;
                 case 3:
                     consultasJugador();
@@ -107,10 +107,37 @@ public class Main {
         System.out.println("4. Menú de consultas de equipos");
         System.out.println("5. Salir");
     }
-    private static void altaEquipo() {
+    private static void altaEquipo(List<Equipo> liga) {
+        String nombre = inputString("Introduce el nombre del equipo: ");
+        String localidad = inputString("Introduce la localidad: ");
+
+        Equipo eq = new Equipo(nombre, localidad, TODO);
+        liga.add(eq);
     }
-    private static void altaJugador() {
+    private static void altaJugador(List<Equipo> liga) {
+        String nombre = inputString("Introduce el nombre del jugador: ");
+        String nacimiento = localdate;
+        int canastas = inputInt("Introduce el número de canastas: ");
+        int asistencias = inputInt("Introduce el número de asistencias: ");
+        int rebotes = inputInt("Introduce el número de rebotes: ");
+        String posicion = inputString("Introduce la posición: ");
+        String nombreEq = inputString("Introduce el nombre del equipo: ");
+        Equipo eq = new Equipo();
+
+        boolean encontrado = false;
+        for (Equipo e : liga) {
+            if (e.getNombre().toLowerCase().equals(nombreEq.toLowerCase())) {
+                encontrado = true;
+                eq = e;
+            }
+        }
+
+        if (encontrado)
+            altaJugador().add(new Jugador(nombre, nacimiento, canastas, asistencias, rebotes, posicion, eq);
     }
+
+
+}
     private static void consultasJugador() {
     }
     private static void consultasEquipos() {
