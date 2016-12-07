@@ -39,7 +39,7 @@ public class CompeticionService {
         atletas.save(a1e3);
         Atleta a2e3 = new Atleta("Zelin", "Cai ", "China", LocalDate.of(1991, 4, 11));
         atletas.save(a2e3);
-        Atleta a3e3 = new Atleta("DaneB", "BIRD-SMITH", "Australia", LocalDate.of(1992, 7, 15));
+        Atleta a3e3 = new Atleta("Dane", "BIRD-SMITH", "Australia", LocalDate.of(1992, 7, 15));
         atletas.save(a3e3);
 
         Medalla m1e1 = new Medalla(TipoMedalla.Oro, "Maratón", "Rio 2016", a1e1);
@@ -60,9 +60,6 @@ public class CompeticionService {
         medallas.save(m2e3);
         Medalla m3e3 = new Medalla(TipoMedalla.Bronce, "Marcha", "Rio 2016", a3e3);
         medallas.save(m3e3);
-
-
-
     }
 
 }

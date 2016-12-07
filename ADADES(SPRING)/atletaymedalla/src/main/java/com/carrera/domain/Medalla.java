@@ -27,7 +27,8 @@ public class Medalla {
         this.atleta = atleta;
     }
 
-
+    public Medalla() {
+    }
 
     // Getters & Setters
     public long getId() {

@@ -5,5 +5,5 @@ package com.carrera.domain;
  */
 
 public enum TipoMedalla {
-    Oro, Plata, Bronce
+    Oro, Plata, Bronce, Ninguna
 }
