@@ -111,11 +111,11 @@ public class Main {
         String nombre = inputString("Introduce el nombre del equipo: ");
         String localidad = inputString("Introduce la localidad: ");
 
-        liga.add(new Equipo(nombre, localidad, TODO));
+        //liga.add(new Equipo(nombre, localidad, TODO));
     }
     private static void altaJugador(List<Equipo> liga, List<Jugador> jugadores) {
         String nombre = inputString("Introduce el nombre del jugador: ");
-        String nacimiento = localdate;
+        //String nacimiento = localdate;
         int canastas = inputInt("Introduce el número de canastas: ");
         int asistencias = inputInt("Introduce el número de asistencias: ");
         int rebotes = inputInt("Introduce el número de rebotes: ");
