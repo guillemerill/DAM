@@ -101,7 +101,7 @@ public class Medalla {
         result = 31 * result + (tipoMedalla != null ? tipoMedalla.hashCode() : 0);
         result = 31 * result + (especialidad != null ? especialidad.hashCode() : 0);
         result = 31 * result + (competicion != null ? competicion.hashCode() : 0);
-        result = 31 * result + (atleta != null ? atleta.hashCode() : 0);
+        //result = 31 * result + (atleta != null ? atleta.hashCode() : 0);
         return result;
     }
 }

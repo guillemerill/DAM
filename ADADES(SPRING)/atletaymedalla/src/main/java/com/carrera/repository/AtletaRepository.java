@@ -9,11 +9,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface AtletaRepository extends JpaRepository<Atleta, Long> {
-    @Query("SELECT a FROM Atleta a WHERE a.nacionalidad = :nacionalidad")
+    @Query("SELECT a FROM Atleta a WHERE a.nacionalidad =:nacionalidad")
     List<Atleta> getByNacionalidad(@Param("nacionalidad") String nacionalidad);
 
-    @Query("SELECT a FROM Atleta a WHERE a.nacimiento < :fecha")
-    List<Atleta> getByNacimientoBefore(@Param("fecha") LocalDate fecha);
+    List<Atleta> findByNacimientoBefore(LocalDate fecha);
 
 
 
