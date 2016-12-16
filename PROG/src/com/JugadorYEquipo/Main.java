@@ -131,8 +131,8 @@ public class Main {
             }
         }
 
-        if (encontrado)
-            jugadores.add(new Jugador(nombre, nacimiento, canastas, asistencias, rebotes, posicion, eq);
+        //if (encontrado)
+            //jugadores.add(new Jugador(nombre, nacimiento, canastas, asistencias, rebotes, posicion, eq);
     }
     private static void consultasJugador() {
         System.out.println("------ Consultas Jugadores ------");
