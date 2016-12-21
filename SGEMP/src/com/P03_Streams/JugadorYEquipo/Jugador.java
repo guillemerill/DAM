@@ -8,13 +8,15 @@ public class Jugador {
     private LocalDate nacim;
     private int canastas;
     private String posicion;
+    private Equipo equipo;
 
     // Constructor
-    public Jugador(String nombre, LocalDate nacim, int canastas, String posicion) {
+    public Jugador(String nombre, LocalDate nacim, int canastas, String posicion, Equipo equipo) {
         this.nombre = nombre;
         this.nacim = nacim;
         this.canastas = canastas;
         this.posicion = posicion;
+        this.equipo = equipo;
     }
 
     // Getters & Setters
@@ -44,6 +46,13 @@ public class Jugador {
     }
     public void setPosicion(String posicion) {
         this.posicion = posicion;
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 
     // Métodos

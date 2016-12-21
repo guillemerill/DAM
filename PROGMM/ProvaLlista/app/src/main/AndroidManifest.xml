@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".Prova1Activity" />
         <activity android:name=".Prova2Activity" />
-        <activity android:name=".Prova3Activity"></activity>
+        <activity android:name=".Prova3Activity" />
+        <activity android:name=".Prova4Activity"></activity>
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ public class Plato {
 
     // Constructores
     public Plato() {
+        cocinero = new Cocinero();
     }
     public Plato(String nombre, String tipo, double precio, Cocinero cocinero) {
         this.nombre = nombre;
@@ -50,5 +51,15 @@ public class Plato {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Plato{" +
+                "nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", precio=" + precio +
+                ", cocinero=" + cocinero.getNombre() +
+                '}';
     }
 }

@@ -31,8 +31,17 @@
         android:text="Prova 3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btnProva3"
         android:layout_below="@+id/btnProva2"
-        android:layout_alignRight="@+id/btnProva2"
-        android:layout_alignEnd="@+id/btnProva2"
-        android:id="@+id/btnProva3" />
+        android:layout_alignLeft="@+id/btnProva2"
+        android:layout_alignStart="@+id/btnProva2" />
+
+    <Button
+        android:text="Prova 4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnProva4"
+        android:layout_below="@+id/btnProva3"
+        android:layout_alignLeft="@+id/btnProva3"
+        android:layout_alignStart="@+id/btnProva3" />
 </RelativeLayout>

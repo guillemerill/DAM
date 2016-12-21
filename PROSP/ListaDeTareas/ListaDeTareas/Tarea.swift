@@ -12,14 +12,13 @@ class Tarea: NSObject {
     // Atributos
     var titulo: String
     var descripcion: String
-    var realizada: Bool
-    var imagen: UIImage
+    var realizada: Bool = false
+    var imagen: UIImage = UIImage(named: "9gag.png")!
     
     // Métodos
     init(titulo: String, descripcion: String) {
         self.titulo = titulo
         self.descripcion = descripcion
-        self.realizada = false
     }
 
     

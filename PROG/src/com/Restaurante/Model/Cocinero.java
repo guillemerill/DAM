@@ -67,4 +67,17 @@ public class Cocinero {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
+
+    // Metodos
+    @Override
+    public String toString() {
+        return "Cocinero{" +
+                "nombre='" + nombre + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", edad=" + edad +
+                ", experiencia=" + experiencia +
+                ", especialidad='" + especialidad + '\'' +
+                '}';
+    }
 }

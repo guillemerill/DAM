@@ -1,15 +1,10 @@
-//
-//  FirstViewController.swift
-//  ListaDeTareas
-//
-//  Created by DAM on 15/12/16.
-//  Copyright © 2016 Guillem. All rights reserved.
-//
 
 import UIKit
+var tareas: [Tarea] = []
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-class FirstViewController: UIViewController {
-
+    @IBOutlet weak var tabla: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +13,20 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // UITableViewDataSource obliga a sobreescribir estos dos métodos
+    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Cuantas filas tiene nuestra tabla
+        return 10
+    }
+    
+    internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let celdas = CeldaPersonalizada(style: UITableViewCellStyle.Default, reuseIdentifier: "celda")
+        var mult = (indexPath.row+1) * selected
+        celdas.textLabel?.text = String(selected) + " x " + String(indexPath.row+1) + " = " + String(mult)
+        celdas.img_izq
+        return celdas
     }
 
 

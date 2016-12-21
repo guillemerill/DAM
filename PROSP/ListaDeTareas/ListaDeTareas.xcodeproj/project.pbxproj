@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3341AB091E09BD3F003840D8 /* CeldaPersonalizadaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3341AB081E09BD3F003840D8 /* CeldaPersonalizadaTableViewCell.swift */; };
 		337FF2EA1E030DC70091B1F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337FF2E91E030DC70091B1F7 /* AppDelegate.swift */; };
 		337FF2EC1E030DC70091B1F7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337FF2EB1E030DC70091B1F7 /* FirstViewController.swift */; };
 		337FF2EE1E030DC70091B1F7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337FF2ED1E030DC70091B1F7 /* SecondViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3341AB081E09BD3F003840D8 /* CeldaPersonalizadaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CeldaPersonalizadaTableViewCell.swift; sourceTree = "<group>"; };
 		337FF2E61E030DC70091B1F7 /* ListaDeTareas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListaDeTareas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		337FF2E91E030DC70091B1F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		337FF2EB1E030DC70091B1F7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				337FF2EB1E030DC70091B1F7 /* FirstViewController.swift */,
 				337FF2ED1E030DC70091B1F7 /* SecondViewController.swift */,
 				337FF2EF1E030DC70091B1F7 /* Main.storyboard */,
+				3341AB081E09BD3F003840D8 /* CeldaPersonalizadaTableViewCell.swift */,
 				337FF2F21E030DC70091B1F7 /* Assets.xcassets */,
 				337FF2F41E030DC70091B1F7 /* LaunchScreen.storyboard */,
 				337FF2F71E030DC70091B1F7 /* Info.plist */,
@@ -265,6 +268,7 @@
 				337FF2EE1E030DC70091B1F7 /* SecondViewController.swift in Sources */,
 				337FF2EA1E030DC70091B1F7 /* AppDelegate.swift in Sources */,
 				337FF2EC1E030DC70091B1F7 /* FirstViewController.swift in Sources */,
+				3341AB091E09BD3F003840D8 /* CeldaPersonalizadaTableViewCell.swift in Sources */,
 				337FF31A1E0310050091B1F7 /* Tarea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +494,7 @@
 				337FF3121E030DC70091B1F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		337FF3131E030DC70091B1F7 /* Build configuration list for PBXNativeTarget "ListaDeTareasTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				337FF3151E030DC70091B1F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		337FF3161E030DC70091B1F7 /* Build configuration list for PBXNativeTarget "ListaDeTareasUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				337FF3181E030DC70091B1F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
