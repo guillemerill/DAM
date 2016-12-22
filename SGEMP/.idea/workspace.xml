@@ -25,8 +25,8 @@
       <file leaf-file-name="MainLiga.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/MainLiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="467">
+              <caret line="34" column="105" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -819,12 +819,12 @@
       <workItem from="1482163851380" duration="1973000" />
       <workItem from="1482250439208" duration="20000" />
       <workItem from="1482341847062" duration="1535000" />
-      <workItem from="1482349327344" duration="1290000" />
+      <workItem from="1482349327344" duration="1431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48722000" />
+    <option name="totallyTimeSpent" value="48863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
@@ -1176,8 +1176,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/MainLiga.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="467">
+          <caret line="34" column="105" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

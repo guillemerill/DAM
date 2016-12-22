@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /*
-2.4	Devolver en una lista exclusivamente los nombres de los jugadores que satisfacen  los requisitos del 1.3
 2.5	Devolver con una lista todos los jugadores ordenados por la fecha de nacimiento.
 2.6	Devolver con una lista todos los jugadores ordenados por número de canastas.
 2.7	Devolver con una lista con los cinco jugadores que hayan realizado más canastas.
@@ -31,6 +30,9 @@ public class MainLiga {
         // 2.2	Devolver con una lista todos los jugadores que hayan obtenido más de 500 canastas.
         System.out.println(jugadores.stream().filter(j -> j.getCanastas() > 500));
         // 2.3	Devolver con una lista  todos los jugadores que hayan obtenido entre 200 y 500 canastas.
+        System.out.println(jugadores.stream().filter(j -> j.getCanastas() > 200 && j.getCanastas() < 500));
+        // 2.4	Devolver en una lista exclusivamente los nombres de los jugadores que satisfacen  los requisitos del 1.3
+        System.out.println(jugadores.stream().filter(j -> j.getCanastas() > 200 && j.getCanastas() < 500));
 
         return atletaRepository
                 .findAll()

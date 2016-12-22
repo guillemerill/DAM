@@ -19,6 +19,7 @@
         <activity android:name=".Prova2Activity" />
         <activity android:name=".Prova3Activity" />
         <activity android:name=".Prova4Activity"></activity>
+        <activity android:name=".Prova5Activity"></activity>
     </application>
 
 </manifest>
