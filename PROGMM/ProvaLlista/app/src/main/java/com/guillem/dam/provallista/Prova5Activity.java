@@ -120,7 +120,13 @@ public class Prova5Activity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View myView = inflater.inflate(R.layout.llista5_item, parent, false);
+
+            // Reciclat de vistes
+            View myView = convertView;
+            if (myView == null) {
+                myView = inflater.inflate(R.layout.llista5_item, parent, false);
+            }
+
             TextView tvNom = (TextView) myView.findViewById(R.id.nom);
             Product product = catalog.get(position);
             String nom = (String) product.getName();
