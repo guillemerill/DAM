@@ -1,7 +1,7 @@
 package com.Restaurante.Model;
 
 /*
- * Entity Cocinero (nombre, tfno, sexo, edad, exp, esp.)
+ * Entity Jugador (nombre, tfno, sexo, edad, exp, esp.)
  */
 
 public class Cocinero {
@@ -71,7 +71,7 @@ public class Cocinero {
     // Metodos
     @Override
     public String toString() {
-        return "Cocinero{" +
+        return "Jugador{" +
                 "nombre='" + nombre + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", sexo='" + sexo + '\'' +

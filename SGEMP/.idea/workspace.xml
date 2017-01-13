@@ -25,8 +25,8 @@
       <file leaf-file-name="MainLiga.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/MainLiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="34" column="105" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
+            <state relative-caret-position="300">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,21 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jugador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/Jugador.java">
+      <file leaf-file-name="MainStreams.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/MainStreams.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Equipo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/Equipo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+            <state relative-caret-position="735">
+              <caret line="54" column="92" selection-start-line="53" selection-start-column="29" selection-end-line="54" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -117,11 +107,11 @@
         <option value="$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/Main.java" />
         <option value="$PROJECT_DIR$/src/com/P03_Streams/MainStreams.java" />
         <option value="$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/MainStreams.java" />
         <option value="$PROJECT_DIR$/src/com/P03_Streams/PizzasEIngredientes/MainPizzas.java" />
         <option value="$PROJECT_DIR$/src/com/P03_Streams/PizzasEIngredientes/Pizza.java" />
         <option value="$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/Equipo.java" />
         <option value="$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/Jugador.java" />
+        <option value="$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/MainStreams.java" />
         <option value="$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/MainLiga.java" />
       </list>
     </option>
@@ -162,6 +152,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -252,9 +245,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -820,15 +810,19 @@
       <workItem from="1482250439208" duration="20000" />
       <workItem from="1482341847062" duration="1535000" />
       <workItem from="1482349327344" duration="1431000" />
+      <workItem from="1483978323657" duration="3221000" />
+      <workItem from="1484152355367" duration="323000" />
+      <workItem from="1484162314067" duration="2401000" />
+      <workItem from="1484234927016" duration="565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48863000" />
+    <option name="totallyTimeSpent" value="55373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -841,7 +835,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1142,26 +1136,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/PizzasEIngredientes/Pizza.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/MainStreams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/Equipo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1174,10 +1152,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/Equipo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/TradersAndTransactions/MainStreams.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="54" column="92" selection-start-line="53" selection-start-column="29" selection-end-line="54" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/P03_Streams/JugadorYEquipo/MainLiga.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="34" column="105" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
+        <state relative-caret-position="300">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

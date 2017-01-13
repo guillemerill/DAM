@@ -14,6 +14,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -117,6 +119,12 @@ public class Prova5Activity extends AppCompatActivity {
             return (int) (catalog.get(position).getId());
         }
 
+        public class ViewHolder {
+            public TextView tvNom;
+            public TextView tvPrice;
+            public ImageView imImage;
+            public TextView tvStock;
+        }
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
