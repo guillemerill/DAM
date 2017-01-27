@@ -15,6 +15,7 @@ public class Atleta {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nacionalidad = nacionalidad;
+        this.nacimiento = nacimiento;
     }
 
     // Getters & Setters
@@ -54,6 +55,6 @@ public class Atleta {
                 ", apellidos='" + apellidos + '\'' +
                 ", nacionalidad='" + nacionalidad + '\'' +
                 ", nacimiento=" + nacimiento +
-                '}';
+                "} \n";
     }
 }

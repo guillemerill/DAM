@@ -111,7 +111,7 @@ public class Main {
         String nombre = inputString("Introduce el nombre del equipo: ");
         String localidad = inputString("Introduce la localidad: ");
 
-        //liga.add(new Equipo(nombre, localidad, TODO));
+        //liga.add(new Test(nombre, localidad, TODO));
     }
     private static void altaJugador(List<Equipo> liga, List<Jugador> jugadores) {
         String nombre = inputString("Introduce el nombre del jugador: ");

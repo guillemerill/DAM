@@ -34,7 +34,7 @@ public class Restaurant {
 
             // Crear platos
             Plato p;
-            p = new Plato("Macarrones", "Equipo principal", 6.53, c1);
+            p = new Plato("Macarrones", "Test principal", 6.53, c1);
             gestor.insertPlato(p);
             System.out.println(p.getNombre() + " dado de alta.");
 

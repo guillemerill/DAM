@@ -1,7 +1,7 @@
 package com.Restaurante.Model;
 
 /*
- * Entity Equipo (nombre, tipo, precio, cocinero)
+ * Entity Test (nombre, tipo, precio, cocinero)
  */
 public class Plato {
     // Atributos
@@ -55,7 +55,7 @@ public class Plato {
 
     @Override
     public String toString() {
-        return "Equipo{" +
+        return "Test{" +
                 "nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", precio=" + precio +

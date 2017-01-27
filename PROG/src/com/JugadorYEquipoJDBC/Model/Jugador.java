@@ -1,17 +1,5 @@
 package com.JugadorYEquipoJDBC.Model;
 
-/*
- * Entity Jugador
- * name` varchar(100) NOT NULL,
-  `birth` date NOT NULL,
-  `nbaskets` int(11) DEFAULT NULL,
-  `nassists` int(11) DEFAULT NULL,
-  `nrebounds` int(11) DEFAULT NULL,
-  `position` varchar(100) DEFAULT NULL,
-  `team` varchar(100) DEFAULT NULL,
- */
-
-
 import java.time.LocalDate;
 
 public class Jugador {
@@ -90,14 +78,13 @@ public class Jugador {
     // Methods
     @Override
     public String toString() {
-        return "Jugador{" +
-                "name='" + name + '\'' +
-                ", birth=" + birth +
-                ", nbaskets=" + nbaskets +
-                ", nassists=" + nassists +
-                ", nrebounds=" + nrebounds +
-                ", position='" + position + '\'' +
-                ", team=" + team +
-                '}';
+        return name +
+                " (" + birth +
+                ", " + nbaskets + " canastas" +
+                ", " + nassists + " asistencias" +
+                ", " + nrebounds + " rebotes"+
+                ", " + position +
+                ", " + team.getName() +
+                ')' + "\n";
     }
 }

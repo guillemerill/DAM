@@ -14,13 +14,18 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/atleta")
-public class AtletaController {
+public class  AtletaController {
     @Autowired
     private AtletaRepository atletaRepository;
 
     @GetMapping
-    public List<Atleta> findAllAtletas() {
+    public List<Atleta> getAllAtletas() {
         return atletaRepository.findAll();
+    }
+
+    @GetMapping("/atleta/{apellido}")
+    public Atleta getAtleta(@PathVariable String nombre) {
+        return atletaRepository.getAtleta(nombre);
     }
 
     // 1. Devolver todos los Atletas de una nacionalidad determinada

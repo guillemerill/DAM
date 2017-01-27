@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_69cb800713aa09ebcf676072de53b224a83dd535/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_1e907913ec6f15a3b133e8e9ec7739bb6a894556/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_83dbf236742df622680a14aa64adb3b76198f18a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_9c9cb30a56aaadd7f3f742539f7ea3495e64f438/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_1db24e3ff4f8b27b57697cf0cb2a0248df1d7041/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_8381195adf9c2fde6487fb32446eff3417a49c31/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_40b702216c71f66885c8ce22364dcdf9b7db84e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_8f7f0ceb3706479047183922f15d825f6c8b3dad/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5f0bc03ccdac1843a5ea9915a96e586825ab5ba5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="cb5e2f497633d8a93f66d24feb5a8878c3ddf667">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cba38512e8b342b867f0a581d8fe3aab5fdd5d9c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_3642ad331945d9fc95b9f2645840f2aa0695da8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_f7c82254af85beda53a589b24c9ec0504fa56efb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d23099d93304df7b44ed7ca3f2be92b2925e7fbc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_c05c75ac6ad73220711309d804384b08b03b0fb5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_b09b97745ed2efc56f7d0051408d500d5a8b3644/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="720c3bc07224a33e6c831b18d85ff4106e0746f9">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ea01b08e1b0521bc69314e83fb0006088b5b8e84/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_6abfbbe8c7d2da46eea8b68ba69fb35800d08bbc/classes.dex" />
+    </item>
+
+</items>

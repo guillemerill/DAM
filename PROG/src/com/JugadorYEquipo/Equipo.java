@@ -1,7 +1,7 @@
 package com.JugadorYEquipo;
 
 /*
-Inicialmente, la entidad Equipo tendrá los siguientes a tributos:
+Inicialmente, la entidad Test tendrá los siguientes a tributos:
 identificador, nombre, localidad y fecha de creación.
 Un equipo está formado por varios jugadores, y un jugador sólo puede participar en un equipo.
  */

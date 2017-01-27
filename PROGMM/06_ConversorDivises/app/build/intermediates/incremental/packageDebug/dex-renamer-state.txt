@@ -1,0 +1,7 @@
+#Thu Jan 26 16:52:57 CET 2017
+base.0=/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ea01b08e1b0521bc69314e83fb0006088b5b8e84
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cba38512e8b342b867f0a581d8fe3aab5fdd5d9c/classes.dex
+base.1=/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cba38512e8b342b867f0a581d8fe3aab5fdd5d9c
+file.0=/Users/DAM/Guillem/PROGMM/06_ConversorDivises/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ea01b08e1b0521bc69314e83fb0006088b5b8e84/classes.dex

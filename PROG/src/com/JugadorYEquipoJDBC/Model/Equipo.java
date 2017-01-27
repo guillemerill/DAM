@@ -2,12 +2,6 @@ package com.JugadorYEquipoJDBC.Model;
 
 import java.time.LocalDate;
 
-/*
- * Entity Equipo
- * name` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL,
-  `creation` date NOT NULL,
- */
 public class Equipo {
     // Attributes
     private String name;
@@ -16,6 +10,9 @@ public class Equipo {
 
     // Constructors
     public Equipo() {
+    }
+    public Equipo(String name) {
+        this.name = name;
     }
     public Equipo(String name, String city, LocalDate creation) {
         this.name = name;
@@ -48,10 +45,9 @@ public class Equipo {
     // Methods
     @Override
     public String toString() {
-        return "Equipo{" +
-                "name='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", creation=" + creation +
-                '}';
+        return  name +
+                " (" + city +
+                ", " + creation +
+                ')' + "\n";
     }
 }
