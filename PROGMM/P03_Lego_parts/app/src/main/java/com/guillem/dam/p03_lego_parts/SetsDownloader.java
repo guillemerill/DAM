@@ -44,44 +44,25 @@ public class SetsDownloader extends AsyncTask<Void, String, Boolean> {
     @Override protected Boolean doInBackground(Void... params) {
         int count;
         try {
-            // TODO
-            URL url = new URL(API);
+            // http://stucom.flx.cat/get_set_parts.php
+            URL url = new URL("https://rebrickable.com/api/v3/lego/colors/?key=b4e0697ce3d5cf21af1088e9bd238dd");
             URLConnection connection = url.openConnection();
-            int lenghtOfFile = connection.getContentLength();
-            pDialog.setMax(lenghtOfFile);
+            connection.connect();
+            int lengthOfFile = connection.getContentLength();
+            pDialog.setMax(lengthOfFile);
             InputStream input = new BufferedInputStream(url.openStream(), 8192);
             ByteArrayOutputStream output = new ByteArrayOutputStream();
             byte data[] = new byte[1024];
             long total = 0;
             while ((count = input.read(data)) != -1) {
                 total += count;
-                publishProgress("" + (int) ((total * 100) / lenghtOfFile));
+                publishProgress("" + (int) ((total * 100) / lengthOfFile));
                 output.write(data, 0, count);
             }
             input.close();
             output.flush();
             String xml = new String(output.toByteArray());
-            File dir = context.getExternalFilesDir((null));
-            if (dir == null) return false;
-            // TODO
-            File f = new File(dir, "sets.tsp");
-            f.delete();
-            PrintWriter wr = new PrintWriter(f);
-            Pattern pattern = Pattern.compile(".*<Cube time?'(.*)'.*");
-            Matcher matcher = pattern.matcher(xml);
-            if (!matcher.find()) return false;
-            String time = matcher.group(1);
-            wr.println(time);
-            wr.println("EUR:1.0000");
-            pattern = Pattern.compile(".*<Cube currency='(.*)' rate='(.*)'.*");
-            matcher = pattern.matcher(xml);
-            while (matcher.find()) {
-                String currency = matcher.group(1);
-                String rate = matcher.group(2);
-                wr.println(currency + ":" + rate);
-            }
-            wr.flush();
-            wr.close();
+            System.out.println(xml);
         } catch (Exception e) {
             Log.e("Error: ", e.getMessage());
             return false;
@@ -97,5 +78,9 @@ public class SetsDownloader extends AsyncTask<Void, String, Boolean> {
     @Override public void onPostExecute(Boolean result) {
         pDialog.dismiss();
         if (listener != null) listener.onSetsLoaded(result);
+    }
+
+    public interface OnSetsLoadedListener {
+        public void onSetsLoaded(boolean ok);
     }
 }

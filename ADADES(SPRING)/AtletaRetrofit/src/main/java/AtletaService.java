@@ -5,18 +5,19 @@ import java.util.List;
 import java.util.Map;
 
 public interface AtletaService {
+
     @GET("/atleta")
     Call<List<Atleta>> getAllAtletas();
 
-    @GET("/nacionalidad/{nacionalidad}")
-    Call<List<Atleta>> getAtletasByNacionalidad(@Path("nacionalidad") String nacionalidad);
+    @GET("/atleta/{id}")
+    Call<Atleta> getAtleta(@Path("id") Long id);
 
-    @GET("/nacimientoBefore/{fecha}")
-    Call<List<Atleta>> atletasBeforeFecha(@Path("fecha")String fecha);
+    @POST("/atleta")
+    Call<Atleta> createAtleta(@Body Atleta athlete);
 
-    @GET("/atletasByNacionalidad")
-    Call<Map<String, List<Atleta>>> groupByNacionalidad();
+    @PUT("/atleta")
+    Call<Atleta> updateAtleta(@Body Atleta athlete);
 
-    @GET("/atletasByTipoMedalla")
-    Call<Map<TipoMedalla, List<Atleta>>> groupByTipoMedalla();
+    @DELETE("/atleta/{id}")
+    Call<Void> deleteAtleta(@Path("id") Long id);
 }

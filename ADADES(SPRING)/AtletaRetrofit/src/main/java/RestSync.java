@@ -4,6 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -18,57 +19,41 @@ public class RestSync {
                 .build();
         AtletaService atletaService = retrofit.create(AtletaService.class);
 
+        // CRUD
+        Atleta atleta = new Atleta("Guillem", "Erill", "España", LocalDate.of(1996, 11, 24));
+        Response<Atleta> postAthletes = atletaService.createAtleta(atleta).execute();
 
-        // Mostrar todos los atletas
-        System.out.println("Mostrando todos los atletas: ");
-        Response<List<Atleta>> response = atletaService.getAllAtletas().execute();
+        if (postAthletes.isSuccessful()) {
+            Atleta a = postAthletes.body();
+            System.out.println("STATUS: " + postAthletes.code() + System.lineSeparator() +
+                    "Atleta: " + a);
 
-        if(response.isSuccessful()) {
-            List<Atleta> JugadorList = response.body();
-            System.out.println(System.lineSeparator()+ JugadorList);
-        }else{
-            System.out.println("ERROR " + response.code() +  ": " + response.errorBody());
-        }
 
-        // 1. Devolver todos los Atletas de una nacionalidad determinada
-        System.out.println("Mostrando los atletas de Kenia: ");
-        Response<List<Atleta>> response2 = atletaService.getAtletasByNacionalidad("Kenia").execute();
-        if(response2.isSuccessful()) {
-            List<Atleta> JugadorList = response2.body();
-            System.out.println(System.lineSeparator()+  JugadorList);
-        }else{
-            System.out.println("ERROR " + response2.code() +  ": " + response2.errorBody());
-        }
+            a.setApellidos("Erill Soto");
+            Response<Atleta> updateAtleta = atletaService.updateAtleta(a).execute();
 
-        // 2. Devolver todos los atletas que hayan nacido en una fecha anterior a una fecha determinada.
-        System.out.println("Mostrando los atletas nacidos antes del 01-01-1990: ");
-        Response<List<Atleta>> response3 = atletaService.atletasBeforeFecha("01-01-1990").execute();
-        if(response3.isSuccessful()) {
-            List<Atleta> JugadorList = response3.body();
-            System.out.println(System.lineSeparator()+ JugadorList);
-        }else{
-            System.out.println("ERROR " + response3.code() +  ": " + response3.errorBody());
-        }
+            if (updateAtleta.isSuccessful()) {
+                System.out.println("Status code: " + updateAtleta.code() + System.lineSeparator() +
+                        "PUT player: " + updateAtleta.body());
+            } else {
+                System.out.println("Status code: " + updateAtleta.code() + "Message error: " + updateAtleta.errorBody());
+            }
 
-        // 3. Retornar todos los atletas agrupados por nacionalidad mediante un Map<String, List <Atleta>>;
-        System.out.println("Mostrando atletas agrupados por nacionalidad: ");
-        Response<Map<String, List<Atleta>>> response4 = atletaService.groupByNacionalidad().execute();
-        if (response4.isSuccessful()){
-            Map<String, List<Atleta>> atletasList = response4.body();
-            System.out.println(System.lineSeparator() + atletasList);
-        }else{
-            System.out.println("ERROR " + response4.code() +  ": " + response4.errorBody());
-        }
+            // Eliminar athleta
+            Response<Void> deleteAtleta = atletaService.deleteAtleta(a.getId()).execute();
+            System.out.println("DELETE status code: " + deleteAtleta.code());
 
-        // 4. Retornar todos los atletas agrupados por tipo de medalla mediante un Map<TipoMedalla, List<Atleta>>;
-        System.out.println("Mostrando atletas agrupados por medallas: ");
-        Call<Map<TipoMedalla, List<Atleta>>> call5 = atletaService.groupByTipoMedalla();
-        Response<Map<TipoMedalla, List<Atleta>>> response5= call5.execute();
-        if (response5.isSuccessful()){
-            Map<TipoMedalla, List<Atleta>> atletasList = response5.body();
-            System.out.println(System.lineSeparator() + atletasList);
-        }else{
-            System.out.println("ERROR " + response5.code() +  ": " + response5.errorBody());
+
+            // Mostrar todos los atletas
+            System.out.println("Mostrando todos los atletas: ");
+            Response<List<Atleta>> response = atletaService.getAllAtletas().execute();
+
+            if (response.isSuccessful()) {
+                List<Atleta> JugadorList = response.body();
+                System.out.println(System.lineSeparator() + JugadorList);
+            } else {
+                System.out.println("ERROR " + response.code() + ": " + response.errorBody());
+            }
         }
     }
 }
